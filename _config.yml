@@ -7,16 +7,16 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-US"
-title                    : "Miguel Claramunt"
-title_separator          : "-"
-name                     : &name "Miguel Claramunt"
-description              : &description "personal description"
-url                      : https://claramunt.es # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
-baseurl                  : "/" # the subpath of your site, e.g. "/blog"
-repository               : "MiguelClaramunt/miguelclaramunt.github.io"
-default_skin: "default"
-dark_skin: "dark"
+locale                    : "en-US"
+title                     : "Miguel Claramunt"
+title_separator           : "-"
+name                      : &name "Miguel Claramunt"
+description               : &description "personal description"
+url                       : https://claramunt.es # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
+baseurl                   : "/" # the subpath of your site, e.g. "/blog"
+repository                : "MiguelClaramunt/miguelclaramunt.github.io"
+minimal_mistakes_skin     : "default"
+minimal_mistakes_skin_dark: "dark"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -28,7 +28,7 @@ author:
   pronouns         : "he/him"  
   bio              : "Research Engineer"
   location         : "Barcelona, ES"
-  employer         : "Barcelona Supercomputing Center"
+  employer         : # "Barcelona Supercomputing Center"
   uri              : # URL
   email            : "miguel@claramunt.es" 
 
