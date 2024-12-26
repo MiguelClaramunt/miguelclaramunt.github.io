@@ -23,7 +23,7 @@ dark_skin: "dark"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.webp"
   name             : "Miguel Claramunt"
   pronouns         : "he/him"  
   bio              : "Research Engineer"
