@@ -6,6 +6,9 @@ redirect_from:
   - /about/
   - /about.html
 ---
+{% assign random = site.time | date: "%s" | modulo: 3 %}
+
+![](./assets/images/avatarimage{{random}}.png){: .align-right"}
 
 Hello! I am Miguel Claramunt (he/him).
 
