@@ -6,9 +6,12 @@ redirect_from:
   - /about/
   - /about.html
 ---
-{% assign random = site.time | date: "%s" | modulo: 3 %}
+<img id="randomImage" src="" style="float: right;"/>
 
-![](./assets/images/avatarimage{{random}}.png){: .align-right}
+<script>
+  const randNum = Math.floor(Math.random() * (4 + 1));
+  document.getElementById('randomImage').src = '/assets/images/avatars/avatarimage_' + randNum + '.png';
+</script>
 
 Hello! I am Miguel Claramunt (he/him).
 
