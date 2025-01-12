@@ -19,13 +19,13 @@
   @include breakpoint($large) {
     float: inline-start;
     width: calc(#{$right-sidebar-width-narrow} - 1em);
-    opacity: 0.75;
-    -webkit-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out;
+    // opacity: 1;
+    // -webkit-transition: opacity 0.2s ease-in-out;
+    // transition: opacity 0.2s ease-in-out;
 
-    &:hover {
-      opacity: 1;
-    }
+    // &:hover {
+    //   opacity: 0.9;
+    // }
 
     &.sticky {
       overflow-y: auto;
@@ -131,15 +131,22 @@
     display: block;
     width: auto;
     height: auto;
+    filter: grayscale(0%);
+    -webkit-transition: opacity 0.2s ease-in-out;
+    transition: filter 0.15s ease-in-out;
+
+    &:hover {
+      filter: grayscale(50%);
+    }
   }
 
   img {
-    max-width: 110px;
+    max-width: 200px;
     border-radius: 50%;
 
     @include breakpoint($large) {
       padding: 5px;
-      border: 1px solid $border-color;
+      border: 2px solid $border-color;
     }
   }
 }
@@ -166,7 +173,7 @@
   margin: 0;
 
   @include breakpoint($large) {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
   }
 }
