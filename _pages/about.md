@@ -6,6 +6,14 @@ redirect_from:
   - /about/
   - /about.html
 ---
+
+{% assign count = 0 %}
+{% for file in site.static_files %}
+  {% if file.path contains 'assets/images/avatars/avatarimage_' %}
+    {% assign count = count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
 <figure style="float: right;" class="align-right">
   <img id="randomImage" src=""/>
   <figcaption style="text-align: center;">
@@ -14,7 +22,7 @@ redirect_from:
 </figure>
 
 <script>
-  const randNum = Math.floor(Math.random() * (4 + 1));
+  const randNum = Math.floor(Math.random() * {{ count }});
   document.getElementById('randomImage').src = 'assets/images/avatars/avatarimage_' + randNum + '.png';
 </script>
 
