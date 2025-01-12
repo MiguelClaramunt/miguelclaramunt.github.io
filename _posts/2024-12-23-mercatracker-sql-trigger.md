@@ -5,7 +5,7 @@ permalink: /posts/2024/12/mercatracker-sql-trigger/
 toc: true
 toc_sticky: true
 tags:
-  - database
+  - sql
 ---
 
 As a data enthusiast, I'm constantly looking for ways to optimize my databases and improve efficiency. One of the biggest challenges in managing large datasets is combating redundancy. This led me on a quest to reduce my database size, resulting in a remarkable 95% through a clever trigger. Let me break down how I tackled this problem and the resulting impact on my data.
