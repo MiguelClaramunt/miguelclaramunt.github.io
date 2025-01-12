@@ -74,6 +74,9 @@ author:
       icon: "fab fa-fw fa-linkedin icon-pad-right"
       url: "https://www.linkedin.com/in/MiguelClaramunt"
 
+# Analytics
+analytics   : "custom"
+
 footer:
   links:
     - label: "GitHub"
