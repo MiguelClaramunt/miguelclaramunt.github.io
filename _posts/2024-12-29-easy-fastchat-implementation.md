@@ -2,6 +2,8 @@
 title: 'Deploying an OpenAI Compatible Endpoint using FastChat'
 date: 2024-12-29
 permalink: /posts/2024/12/easy-fastchat/
+toc: true
+toc_sticky: true
 tags:
   - large language models
   - fastchat
