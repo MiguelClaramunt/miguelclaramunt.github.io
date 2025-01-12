@@ -6,7 +6,10 @@ redirect_from:
   - /about/
   - /about.html
 ---
-<img id="randomImage" src="" style="float: right;"/>
+<figure class="align-right">
+  <img id="randomImage" src=""/>
+  <figcaption><a href="https://www.sulake.com/">© Sulake</a></figcaption>
+</figure>
 
 <script>
   const randNum = Math.floor(Math.random() * (4 + 1));
