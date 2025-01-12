@@ -2,6 +2,6 @@ main:
   - title: "Blog"
     url: /posts
   - title: "About"
-    url: /
+    url: /about
   - title: "CV"
     url: /cv
