@@ -10,7 +10,7 @@ redirect_from:
 
 <script>
   const randNum = Math.floor(Math.random() * (4 + 1));
-  document.getElementById('randomImage').src = '/assets/images/avatars/avatarimage_' + randNum + '.png';
+  document.getElementById('randomImage').src = 'assets/images/avatars/avatarimage_' + randNum + '.png';
 </script>
 
 Hello! I am Miguel Claramunt (he/him).
