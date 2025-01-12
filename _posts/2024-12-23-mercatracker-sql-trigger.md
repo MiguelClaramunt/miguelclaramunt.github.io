@@ -36,7 +36,7 @@ The key was to leverage triggers—a special type of automated SQL code that exe
 
 Let me illustrate with an example: imagine a product with `id = 1` is added to the online catalogue:
 
-| `id` | `ymd` | `content` | Comment |
+| id | ymd | content | Comment |
 |---|---|---|---|
 | `1` | `20240101` | `{price: 1.5}` | Initial record |
 | `1` | `20240102` | `{price: 1.5}` |  This row would **not** be added as it is a duplicate. | 
