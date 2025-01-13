@@ -1,7 +1,6 @@
 ---
 title: 'Keeping My Product Database Lean: Eliminating Redundancy with a Clever Trigger'
 last_modified_at: 2024-12-25
-permalink: /posts/2024/12/mercatracker-sql-trigger/
 toc: true
 toc_sticky: true
 tags:
