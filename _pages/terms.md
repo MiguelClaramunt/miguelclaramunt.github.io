@@ -1,7 +1,7 @@
 ---
 permalink: /terms
 title: "Privacy Policy"
-last_modified_at: 2025-01-12
+last_modified_at: 2025-01-25
 toc: true
 ---
 
