@@ -9,9 +9,9 @@ This privacy policy on the protection of individuals with regard to the processi
 
 ## Data Collection
 
-### Log Files
+<!-- ### Log Files
 
-Like many other websites, this site uses log files to help learn about when, from where, and how often traffic flows to this site. The information in these log files include:
+Like many other websites, this Website uses log files to help learn about when, from where, and how often traffic flows to this site. The information in these log files include:
 
 * Internet Protocol addresses (IP)
 * Types of browser
@@ -20,7 +20,7 @@ Like many other websites, this site uses log files to help learn about when, fro
 * Referring and exit pages
 * Number of clicks
 
-All of this information is not linked to anything that is personally identifiable.
+All of this information is not linked to anything that is personally identifiable. -->
 
 ### GitHub Pages Service
 
@@ -28,9 +28,9 @@ This Website is hosted as a GitHub Pages website. GitHub may collect User Person
 
 ### Website Analytics
 
-We want to process as little personal information as possible when you use our website. That's why we've chosen [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) for our website analytics, which doesn't use cookies and complies with the GDPR, ePrivacy (including PECR), COPPA and CCPA. You can read more about this on Fathom Analytics' website.
+ We want to process as little personal information as possible when you use our Website. For this reason, we have chosen [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) for our Website analytics, which does not use cookies and complies with the GDPR, ePrivacy (including PECR), COPPA and CCPA. You can read more about this on [Cloudflare's Privacy Policy](https://www.cloudflare.com/privacypolicy/).
 
-The purpose of us using this software is to understand our website traffic in the most privacy-friendly way possible so that we can continually improve our website and business. The lawful basis as per the GDPR is "f); where our legitimate interests are to improve the Carbyne Stack website and open source project continually." As per the explanation, no personal data is stored over time.
+The purpose of using this software is to understand this Website traffic in the most privacy-friendly way possible. The lawful basis as per the GDPR is "f); where our legitimate interests are to improve the Website continually." As per the explanation, no personal data is stored over time.
 
 ### Cookie Usage
 
@@ -40,4 +40,4 @@ This Website does **not** use cookies.
 
 ## Linked services
 
-This website contains links to other services. If you follow these links, you should become aware of their terms of service.
+This Website contains links to other services. If you follow these links, you should become aware of their terms of service.
