@@ -5,7 +5,13 @@ last_modified_at: 2025-01-12
 toc: true
 ---
 
-This privacy policy on the protection of individuals with regard to the processing of personal data by the European Commission is based on the [Regulation (EU) 2018/1725](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32018R1725). 
+This Privacy Policy ("Policy") outlines the personal information that the Website gathers and how we use that personal information. This Policy is based on the [Regulation (EU) 2018/1725](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32018R1725). 
+
+## Definitions
+
+* The "Website", "We", "Us" and "Our" refers to Miguel Claramunt's Website located at [www.claramunt.es](https://claramunt.es/), and all content, services, and products provided by Miguel Claramunt at or through the Website. It also refers to subdomains owned by us. Occasionally, websites owned by us may provide different or additional terms of service. If those additional terms conflict with this Policy, the more specific terms apply to the relevant page or service.
+
+* The "User", "You," and "Your" refer to the individual person, company, or organization that has visited or is using the Website.
 
 ## Data Collection
 
