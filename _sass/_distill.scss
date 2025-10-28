@@ -183,3 +183,50 @@ d-appendix {
     }
   }
 }
+
+/* Responsive spotlight/gallery images */
+.spotlight-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-left: 0;
+}
+.spotlight {
+  display: block; /* anchor around image */
+  flex: 1 1 100%;
+}
+.spotlight img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; /* keeps aspect ratio while filling width */
+}
+
+@media (min-width: 600px) {
+  .spotlight {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .spotlight {
+    flex: 1 1 calc(33.333% - 1rem);
+  }
+}
+
+/* Force single-column layout for spotlight galleries (one picture per row) */
+.spotlight-group {
+  /* keep flex behavior but stack vertically */
+  flex-direction: column !important;
+  gap: 0; /* optional: remove horizontal gaps when stacked */
+}
+.spotlight {
+  flex: 1 1 100% !important;
+  max-width: 100% !important;
+}
+.spotlight img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important; /* ensure full image visible within row */
+}
