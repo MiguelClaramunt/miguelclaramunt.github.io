@@ -1,4 +1,5 @@
 ---
+regenerate: true
 layout: default
 permalink: /blog/
 title: blog
