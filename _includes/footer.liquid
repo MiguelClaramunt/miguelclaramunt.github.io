@@ -1,30 +1,61 @@
-{% capture footer_contents %}
-  &copy; Copyright {{ site.time | date: '%Y' }}
-  {{ site.first_name }}
-  {{ site.middle_name }}
-  {{ site.last_name }}. {{ site.footer_text }}
-  {% if site.impressum_path %}
-    <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-  {% endif %}
-  {% if site.last_updated %}
-    Last updated: {{ 'now' | date: '%B %d, %Y' }}.
+{% assign contact = site.contact %}
+{% assign display_name = contact.name | default: site.first_name %}
+{% if display_name == site.first_name and site.last_name %}
+  {% assign display_name = display_name | append: ' ' | append: site.last_name %}
+{% endif %}
+{% assign display_name = display_name | strip %}
+
+{% capture email_candidate %}
+  {% if site.data.socials.email %}
+    {{ site.data.socials.email }}
   {% endif %}
 {% endcapture %}
+{% assign contact_email = email_candidate | strip %}
 
-{% if site.footer_fixed %}
-  <footer class="fixed-bottom" role="contentinfo">
-    <div class="container mt-0">
-      {{ footer_contents }}
-    </div>
-  </footer>
-{% else %}
+{% assign homepage = contact.homepage %}
+{% assign map = contact.map %}
+{% assign address_lines = contact.address %}
+{% assign office = contact.office %}
+{% assign homepage_label = homepage.label | default: 'Homepage' %}
+{% assign homepage_url = homepage.url | default: site.data.socials.work_url | default: site.url %}
+
+{% capture footer_text_html %}
+  {{ site.footer_text | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}
+{% endcapture %}
+
+{% assign display_sticky_footer = site.footer_sticky %}
+{% if display_sticky_footer %}
   <footer class="sticky-bottom mt-5" role="contentinfo">
-    {% if site.newsletter.enabled %}
-      {% include newsletter.liquid %}
-    {% endif %}
+    <div class="container" style="max-width:960px; margin:0 auto;">
+      <div class="footer-flex" style="display:flex; flex-wrap:wrap; gap:2rem; text-align:left;">
+        <div class="footer-left" style="flex:1; min-width:280px;">
+          {% include contact_details.liquid
+            contact=contact
+            display_name=display_name
+            contact_email=contact_email
+            office=office
+            address=address_lines
+            homepage_label=homepage_label
+            homepage_url=homepage_url
+            icon_size='1.1em'
+            heading_margin='1.9rem'
+            block_margin='1rem'
+            social_icon_size='2.2em'
+            social_alignment='left'
+            social_margin_top='0.8rem'
+            anchor_id='contact_info'
+          %}
 
-    <div class="container">
-      {{ footer_contents }}
+          <p style="font-size: 0.9em; margin-top:0.8rem;">
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-ND</a> {{ site.time | date: '%Y' }} {{ display_name }}<br>
+            {% if footer_text_html != '' %}
+              {{ footer_text_html }}<br>
+            {% endif %}
+            Last updated: {{ 'now' | date: '%d/%m/%Y' }}
+          </p>
+        </div>
+
+      </div>
     </div>
   </footer>
 {% endif %}
