@@ -3,7 +3,7 @@ regenerate: true
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: A showcase of projects I've worked on and contributed to over the years.
 nav: true
 nav_order: 3
 display_categories: [work, personal]
