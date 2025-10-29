@@ -8,11 +8,25 @@ layout: default
   </style>
 {% endif %}
 
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-description">{{ page.description }}</p>
-  </header>
+{% assign hide_page_title = page.hide_title | default: false %}
+{% assign page_description = page.description | to_s | strip %}
+{% comment %} Avoid assigning via a comparison expression (older Liquid flavors choke on this). {% endcomment %}
+{% if page_description != '' %}
+  {% assign show_description = true %}
+{% else %}
+  {% assign show_description = false %}
+{% endif %}
+
+<div class="post{% if hide_page_title %} post--no-title{% endif %}">
+
+  {% unless hide_page_title %}
+    <header class="post-header">
+      <h1 class="post-title"{% if page.toc and page.toc.hide_title %} data-toc-skip{% endif %}>{{ page.title }}</h1>
+      {% if show_description %}
+        <p class="post-description">{{ page.description }}</p>
+      {% endif %}
+    </header>
+  {% endunless %}
 
   <article>
     {{ content }}
