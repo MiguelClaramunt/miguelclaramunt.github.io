@@ -2,7 +2,7 @@
 layout: page
 title: ELOQUENCE
 description: ELOQUENCE is pioneering the development of advanced voice/chat bot technologies aimed at transforming unstructured dialogues into comprehensible, safe, and unbiased interactions.
-img: assets/img/eloquence.png
+img: assets/img/projects/eloquence_0.webp
 redirect: https://eloquenceai.eu/
 importance: 1
 category: work
