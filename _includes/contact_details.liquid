@@ -1,0 +1,58 @@
+{% assign contact = include.contact | default: site.contact | default: site.data.contact %}
+{% assign display_name = include.display_name | default: site.first_name %}
+{% if display_name == site.first_name and site.last_name %}
+  {% assign display_name = display_name | append: ' ' | append: site.last_name %}
+{% endif %}
+{% assign display_name = display_name | strip %}
+
+{% capture email_candidate %}
+  {% if include.contact_email %}
+    {{ include.contact_email }}
+  {% elsif site.data.socials.email %}
+    {{ site.data.socials.email }}
+  {% endif %}
+{% endcapture %}
+{% assign contact_email = email_candidate | strip %}
+
+{% assign office = include.office | default: contact.office %}
+{% assign address_lines = include.address | default: contact.address %}
+{% assign homepage = include.homepage | default: contact.homepage %}
+{% assign homepage_label = include.homepage_label | default: homepage.label | default: 'Homepage' %}
+{% assign homepage_url = include.homepage_url | default: homepage.url | default: site.data.socials.work_url | default: site.url %}
+
+{% assign icon_size = include.icon_size | default: '1.1em' %}
+{% assign heading_tag = include.heading_tag | default: 'h4' %}
+{% assign heading_margin = include.heading_margin | default: '1.9rem' %}
+{% assign block_margin = include.block_margin | default: '1rem' %}
+{% assign anchor_id = include.anchor_id %}
+{% assign show_social = include.show_social %}
+{% if show_social == nil %}
+  {% assign show_social = true %}
+{% endif %}
+{% assign social_icon_size = include.social_icon_size | default: '2.2em' %}
+{% assign social_alignment = include.social_alignment | default: 'left' %}
+{% assign social_margin_top = include.social_margin_top | default: '0.8rem' %}
+
+{% if display_name != '' %}
+  {% if anchor_id %}<a id="{{ anchor_id }}">{% endif %}
+  <{{ heading_tag }} style="margin-bottom: {{ heading_margin }};">
+    <b>{{ display_name }}</b>
+  </{{ heading_tag }}>
+  {% if anchor_id %}</a>{% endif %}
+{% endif %}
+
+{% if contact_email %}
+  <p style="margin-bottom:{{ block_margin }};">
+    <i class="fas fa-envelope" style="font-size: {{ icon_size }};"></i>
+    &nbsp;
+    <a href="mailto:{{ contact_email | encode_email }}">{{ contact_email }}</a>
+  </p>
+{% endif %}
+
+{% if show_social and site.data.socials and site.data.socials != empty %}
+  <div class="social">
+    <div class="contact-icons" style="font-size: {{ social_icon_size }}; text-align:{{ social_alignment }}; margin-top:{{ social_margin_top }};">
+      {% include social.liquid %}
+    </div>
+  </div>
+{% endif %}
