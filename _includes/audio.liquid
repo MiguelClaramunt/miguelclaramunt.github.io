@@ -1,30 +1,49 @@
-<figure>
-  <audio
-    src="{% if include.cache_bust %}{{ include.path | relative_url | bust_file_cache }}{% else %}{{ include.path | relative_url }}{% endif %}"
-    {% if include.class %}
-      class="{{ include.class }}"
-    {% endif %}
-    {% if include.alt %}
-      alt="{{ include.alt }}"
-    {% endif %}
-    {% if include.title %}
-      title="{{ include.title }}"
-    {% endif %}
-    {% if include.autoplay %}
-      autoplay
-    {% endif %}
-    {% if include.controls %}
-      controls
-    {% endif %}
-    {% if include.loop %}
-      loop
-    {% endif %}
-    {% if include.muted %}
-      muted
-    {% endif %}
-  />
+{%- assign src = include.path | relative_url -%}
+{%- assign is_txt = include.path and include.path contains '.txt' -%}
 
-  {% if include.caption %}
-    <figcaption class="caption">{{ include.caption }}</figcaption>
-  {% endif %}
-</figure>
+{%- if include.base64 or is_txt -%}
+  <figure>
+    {%- comment -%}
+      For base64-encoded audio (plain base64 in a .txt or when include.base64=true)
+      render a clickable wrapper that the site's `assets/js/audio-base64.js` will
+      attach to. This keeps markup simple in posts:
+        {% include audio.liquid path="assets/audio/mypronunciation.txt" %}
+    {%- endcomment -%}
+
+    <span class="pronunciation-wrapper audio-base64-wrapper" role="button" tabindex="0"
+          data-audio-src="{{ src }}"
+          {%- if include.title %} title="{{ include.title }}"{% endif %}
+          {%- if include.alt %} aria-label="{{ include.alt }}"{% endif %}>
+      {%- if include.label %}
+        {{ include.label }}
+      {%- else -%}
+        <span class="ipa-notation">Listen</span>
+        <i class="fas fa-volume-up pronunciation-speaker" aria-hidden="true"></i>
+      {%- endif -%}
+    </span>
+
+    {%- if include.caption %}
+      <figcaption class="caption">{{ include.caption }}</figcaption>
+    {%- endif %}
+
+    {# include the JS player automatically (defer to avoid blocking) #}
+    <script defer src="{{ '/assets/js/audio-base64.js' | relative_url }}"></script>
+  </figure>
+
+{%- else -%}
+  <figure>
+    <audio
+      src="{% if include.cache_bust %}{{ src | bust_file_cache }}{% else %}{{ src }}{% endif %}"
+      {%- if include.class %} class="{{ include.class }}"{% endif -%}
+      {%- if include.title %} title="{{ include.title }}"{% endif -%}
+      {%- if include.autoplay %} autoplay{% endif -%}
+      {%- if include.controls %} controls{% endif -%}
+      {%- if include.loop %} loop{% endif -%}
+      {%- if include.muted %} muted{% endif -%}
+    ></audio>
+
+    {%- if include.caption %}
+      <figcaption class="caption">{{ include.caption }}</figcaption>
+    {%- endif -%}
+  </figure>
+{%- endif -%}

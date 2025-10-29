@@ -325,3 +325,9 @@
 {% if site.newsletter.enabled %}
   <script defer src="{{ '/assets/js/newsletter.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
+
+{% if page.pronunciation and page.pronunciation.enabled %}
+  <!-- IPA Pronunciation -->
+  <!-- Use the new generic audio-base64 loader which supports data/base64 audio and integrates with the pronunciation markup -->
+  <script defer src="{{ '/assets/js/audio-base64.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}

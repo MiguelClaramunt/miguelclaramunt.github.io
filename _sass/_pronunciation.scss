@@ -1,0 +1,114 @@
+/*******************************************************************************
+ * IPA Pronunciation Feature Styles
+ ******************************************************************************/
+
+.pronunciation-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* keep tight to read naturally in a sentence */
+  padding: 0.2rem 0.35rem 0.15rem 0.3rem;
+  margin: 0 0.35rem; /* horizontal gap to separate from surrounding text */
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: #f8f8f8;
+  cursor: pointer;
+  position: relative;
+  line-height: 1.1;
+  transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
+  vertical-align: baseline; /* align with surrounding text */
+  font-family: "Noto Sans", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.pronunciation-wrapper:hover,
+.pronunciation-wrapper:hover,
+.pronunciation-wrapper.playing,
+.pronunciation-wrapper:active {
+  /* Use an outer box-shadow ring to highlight without changing layout.
+     Keep the element's border at 1px transparent so its box size doesn't change. */
+  background: #eef3f7;
+  border: 1px solid transparent;
+  box-shadow: 0 0 0 3px rgba(var(--global-theme-color-rgb, 31,94,128), 0.14); /* subtle ring */
+}
+
+.pronunciation-wrapper:active { transform: translateY(1px); }
+
+.ipa-notation {
+  /* Prefer fonts with strong IPA coverage */
+  font-family: "Noto Sans", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-style: italic;
+  /* Slightly stronger weight so IPA stands out in body text */
+  font-weight: 400;
+  color: #444;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  cursor: inherit;
+  transition: color .18s ease;
+}
+
+.pronunciation-wrapper:hover .ipa-notation,
+.pronunciation-wrapper:active .ipa-notation,
+.pronunciation-wrapper.playing .ipa-notation { color: var(--global-theme-color); }
+
+.pronunciation-speaker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1em;
+  height: 1.1em;
+  font-size: 0.95em;
+  line-height: 1;
+  color: #555;
+  /* Use a small translateY to consistently center the icon across zoom/OS/font
+    instead of fragile top offsets. We apply translate via transform so the
+    playing animation (which uses transform) is updated below to preserve the
+    vertical shift. */
+  position: relative;
+  transform: translateY(0em);
+  transition: color .18s ease, transform .18s ease;
+}
+
+.pronunciation-wrapper:hover .pronunciation-speaker, 
+.pronunciation-wrapper.playing .pronunciation-speaker { color: var(--global-theme-color); }
+
+.pronunciation-wrapper.playing .pronunciation-speaker { animation: pulse 1.5s infinite; }
+.pronunciation-wrapper.error .pronunciation-speaker { color: #d32f2f; animation: shake .5s ease-in-out; }
+
+.pronunciation-wrapper:focus { outline: 2px solid var(--global-theme-color); outline-offset: 2px; }
+
+/* Accessibility: enlarge tap target on very small screens */
+@media (max-width: 600px) {
+  .pronunciation-wrapper { padding: 0.25rem 0.5rem; }
+}
+
+@keyframes pulse { 0% { transform: translateY(-0.06em) scale(1);} 50% { transform: translateY(-0.06em) scale(1.08);} 100% { transform: translateY(-0.06em) scale(1);} }
+@keyframes shake { 0%,100% { transform: translateX(0);} 25% { transform: translateX(-2px);} 75% { transform: translateX(2px);} }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) { .pronunciation-wrapper.playing .pronunciation-speaker { animation: none; } }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .pronunciation-wrapper { gap: 0.2rem; }
+  .ipa-notation { font-size: 0.9em; }
+  .pronunciation-speaker {
+    padding: 0.2rem;
+    min-width: 1.2rem;
+    min-height: 1.2rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .ipa-notation { border-bottom: 2px solid; }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .ipa-notation,
+  .pronunciation-speaker { transition: none; }
+  .pronunciation-speaker.playing { animation: none; }
+  .pronunciation-speaker.error { animation: none; }
+}
