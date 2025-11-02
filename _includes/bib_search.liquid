@@ -1,95 +1,121 @@
 {% if site.bib_search %}
   <style>
     /* ensure consistent spacing between search box and first section */
-    #bibsearch { display: block; margin: 1.5rem 0 1.5rem 0; max-width: 720px; }
-    .bib-spacer { height: 2.25rem; } /* default spacer height between sections */
-    @media (max-width: 640px) { #bibsearch { margin-bottom: 1rem; } .bib-spacer { height: 1.25rem; } }
+    #bibsearch {
+      display: block;
+      margin: 1.5rem 0 1.5rem 0;
+      max-width: 720px;
+    }
+    .bib-spacer {
+      height: 2.25rem;
+    } /* default spacer height between sections */
+    @media (max-width: 640px) {
+      #bibsearch {
+        margin-bottom: 1rem;
+      }
+      .bib-spacer {
+        height: 1.25rem;
+      }
+    }
   </style>
 
   <script src="{{ '/assets/js/bibsearch.js' | relative_url | bust_file_cache }}" type="module"></script>
   <input type="text" id="bibsearch" spellcheck="false" autocomplete="off" class="search bibsearch-form-input" placeholder="Type to search">
 {% endif %}
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Get combined search query from likely search inputs (include actual id "#bibsearch")
-  function getSearchQuery() {
-    var inputs = document.querySelectorAll('#bibsearch, #bib-search-input, .bib-search input, input.bib-search, input[type="search"]');
-    return Array.from(inputs).map(function(i){ return (i.value || '').trim(); }).join(' ').trim();
-  }
-
-  // Determine whether a .bib-section has any visible entry (used while filtering)
-  function sectionHasVisibleEntries(section) {
-    var entries = section && section.querySelector('.bib-entries');
-    if (!entries) return false;
-    // consider an entry visible if any descendant element has layout and non-empty text
-    var els = entries.querySelectorAll('*');
-    if (!els.length) return entries.textContent.trim().length > 0;
-    return Array.from(els).some(function(el) {
-      return el.offsetParent !== null && el.textContent.trim().length > 0;
-    });
-  }
-
-  // Record whether each section had any initial (server-rendered) entries
-  document.querySelectorAll('.bib-section').forEach(function(section) {
-    var entries = section.querySelector('.bib-entries');
-    var hasInitial = false;
-    if (entries) {
-      // treat as "has initial" when there's any descendant element with non-empty text
-      hasInitial = entries.textContent.trim().length > 0 && entries.querySelectorAll('*').length > 0;
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get combined search query from likely search inputs (include actual id "#bibsearch")
+    function getSearchQuery() {
+      var inputs = document.querySelectorAll('#bibsearch, #bib-search-input, .bib-search input, input.bib-search, input[type="search"]');
+      return Array.from(inputs)
+        .map(function (i) {
+          return (i.value || '').trim();
+        })
+        .join(' ')
+        .trim();
     }
-    section.dataset.hasInitial = hasInitial ? '1' : '0';
-  });
 
-  // Toggle sections: if the search is empty, show only those with initial entries;
-  // if the search has text, show sections that have visible matches
-  function toggleEmptySections() {
-    var query = getSearchQuery();
-    var pub = document.querySelector('.bib-section[data-section="publications"]');
-    var talks = document.querySelector('.bib-section[data-section="talks"]');
-    document.querySelectorAll('.bib-section').forEach(function(section) {
-      if (!query) {
-        // when cleared, only restore sections that had initial content
-        section.style.display = section.dataset.hasInitial === '1' ? '' : 'none';
-      } else {
-        section.style.display = sectionHasVisibleEntries(section) ? '' : 'none';
+    // Determine whether a .bib-section has any visible entry (used while filtering)
+    function sectionHasVisibleEntries(section) {
+      var entries = section && section.querySelector('.bib-entries');
+      if (!entries) return false;
+      // consider an entry visible if any descendant element has layout and non-empty text
+      var els = entries.querySelectorAll('*');
+      if (!els.length) return entries.textContent.trim().length > 0;
+      return Array.from(els).some(function (el) {
+        return el.offsetParent !== null && el.textContent.trim().length > 0;
+      });
+    }
+
+    // Record whether each section had any initial (server-rendered) entries
+    document.querySelectorAll('.bib-section').forEach(function (section) {
+      var entries = section.querySelector('.bib-entries');
+      var hasInitial = false;
+      if (entries) {
+        // treat as "has initial" when there's any descendant element with non-empty text
+        hasInitial = entries.textContent.trim().length > 0 && entries.querySelectorAll('*').length > 0;
       }
+      section.dataset.hasInitial = hasInitial ? '1' : '0';
     });
 
-    // spacer logic
-    var spacer = document.querySelector('.bib-spacer');
-    if (!spacer) return;
-    if (!query) {
-      // when cleared, show spacer only if both sections had initial content
-      var show = (pub && pub.dataset.hasInitial === '1') && (talks && talks.dataset.hasInitial === '1');
-      spacer.style.display = show ? '' : 'none';
-    } else {
-      // when searching: hide spacer if only talks has visible results (no visible pubs)
-      var pubVisible = pub && sectionHasVisibleEntries(pub);
-      var talksVisible = talks && sectionHasVisibleEntries(talks);
-      spacer.style.display = (talksVisible && !pubVisible) ? 'none' : '';
+    // Toggle sections: if the search is empty, show only those with initial entries;
+    // if the search has text, show sections that have visible matches
+    function toggleEmptySections() {
+      var query = getSearchQuery();
+      var pub = document.querySelector('.bib-section[data-section="publications"]');
+      var talks = document.querySelector('.bib-section[data-section="talks"]');
+      document.querySelectorAll('.bib-section').forEach(function (section) {
+        if (!query) {
+          // when cleared, only restore sections that had initial content
+          section.style.display = section.dataset.hasInitial === '1' ? '' : 'none';
+        } else {
+          section.style.display = sectionHasVisibleEntries(section) ? '' : 'none';
+        }
+      });
+
+      // spacer logic
+      var spacer = document.querySelector('.bib-spacer');
+      if (!spacer) return;
+      if (!query) {
+        // when cleared, show spacer only if both sections had initial content
+        var show = pub && pub.dataset.hasInitial === '1' && talks && talks.dataset.hasInitial === '1';
+        spacer.style.display = show ? '' : 'none';
+      } else {
+        // when searching: hide spacer if only talks has visible results (no visible pubs)
+        var pubVisible = pub && sectionHasVisibleEntries(pub);
+        var talksVisible = talks && sectionHasVisibleEntries(talks);
+        spacer.style.display = talksVisible && !pubVisible ? 'none' : '';
+      }
     }
-  }
 
-  // Debounced runner to allow other search handlers to complete first
-  var debounceTimer = null;
-  function scheduleToggle(delay) {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(toggleEmptySections, typeof delay === 'number' ? delay : 50);
-  }
+    // Debounced runner to allow other search handlers to complete first
+    var debounceTimer = null;
+    function scheduleToggle(delay) {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(toggleEmptySections, typeof delay === 'number' ? delay : 50);
+    }
 
-  // Initial run
-  scheduleToggle(0);
+    // Initial run
+    scheduleToggle(0);
 
-  // Wire up common input events on search fields
-  var inputs = document.querySelectorAll('#bibsearch, #bib-search-input, .bib-search input, input.bib-search, input[type="search"]');
-  inputs.forEach(function(input) {
-    ['input','change','keyup','search'].forEach(function(ev) {
-      input.addEventListener(ev, function() { scheduleToggle(25); }, { passive: true });
+    // Wire up common input events on search fields
+    var inputs = document.querySelectorAll('#bibsearch, #bib-search-input, .bib-search input, input.bib-search, input[type="search"]');
+    inputs.forEach(function (input) {
+      ['input', 'change', 'keyup', 'search'].forEach(function (ev) {
+        input.addEventListener(
+          ev,
+          function () {
+            scheduleToggle(25);
+          },
+          { passive: true }
+        );
+      });
     });
-  });
 
-  // Observe DOM changes broadly (subtree) so we re-evaluate when other scripts modify entries
-  var observer = new MutationObserver(function() { scheduleToggle(25); });
-  observer.observe(document.body, { childList: true, subtree: true, attributes: true });
-});
+    // Observe DOM changes broadly (subtree) so we re-evaluate when other scripts modify entries
+    var observer = new MutationObserver(function () {
+      scheduleToggle(25);
+    });
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+  });
 </script>

@@ -26,7 +26,7 @@
 {% assign block_margin = include.block_margin | default: '1rem' %}
 {% assign anchor_id = include.anchor_id %}
 {% assign show_social = include.show_social %}
-{% if show_social == nil %}
+{% if show_social == null %}
   {% assign show_social = true %}
 {% endif %}
 {% assign social_icon_size = include.social_icon_size | default: '2.2em' %}
