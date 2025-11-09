@@ -22,6 +22,7 @@ hide_title: true
 {% assign talks_bib_str = talks_bib | strip %}
 
 {% if papers_bib_str != "" %}
+
 <section class="bib-section" data-section="publications">
   <h1 class="section-title">publications</h1>
 
@@ -35,10 +36,12 @@ hide_title: true
 
 {% comment %} show spacer only if both sections have server-rendered content {% endcomment %}
 {% if papers_bib_str != "" and talks_bib_str != "" %}
+
   <div class="bib-spacer" aria-hidden="true"></div>
 {% endif %}
 
 {% if talks_bib_str != "" %}
+
 <section class="bib-section" data-section="talks">
   <h1 class="section-title">talks</h1>
 
