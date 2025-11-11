@@ -36,4 +36,3 @@ Hello! I am Miguel Claramunt
 (he/him).
 
 Currently I am a [Research Engineer](https://www.bsc.es/claramunt-argote-miguel) at [Barcelona Supercomputing Center's Language Technologies Laboratory](https://www.bsc.es/discover-bsc/organisation/research-structure/language-technologies-laboratory).
-
