@@ -13,11 +13,29 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted on <a
   href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Source on <a href="https://github.com/MiguelClaramunt/folio">GitHub</a>.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+keywords: # add your own keywords or leave empty
+  - Miguel Claramunt
+  - research
+  - natural language procesing
+  - artificial intelligence
+  - machine translation
+  - barcelona
+  - valencia
+  - barcelona supercomputing center
+  - publications
+  - machine learning
+  - data science
+  - academia
+  - blog
+  - projects
+  - open-source
+  - al-folio
+  - portfolio
+  - resume
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⌨️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: 📌 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
-url: https://miguelclaramunt.github.io # the base hostname & protocol for your site
+url: https://claramunt.es # the base hostname & protocol for your site
 # baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: true # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
@@ -77,6 +95,7 @@ google_analytics: # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
 cronitor_analytics: # cronitor RUM analytics site ID (format: XXXXXXXXX)
 pirsch_analytics: # your Pirsch analytics site ID (length 32 characters)
 openpanel_analytics: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+cloudflare_analytics: e6ef532a817b4e6fa7b608b54a411f2c # your Cloudflare Web Analytics site ID (length 32 characters)
 
 # For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
 google_site_verification: # your google-site-verification ID (Google Search Console)
@@ -440,6 +459,7 @@ enable_google_analytics: false # enables google analytics
 enable_cronitor_analytics: false # enables cronitor RUM analytics
 enable_pirsch_analytics: false # enables Pirsch analytics (https://pirsch.io/)
 enable_openpanel_analytics: false # enables Openpanel analytics (https://openpanel.dev/)
+enable_cloudflare_analytics: true # enables Cloudflare Web Analytics (https://www.cloudflare.com/web-analytics/)
 enable_google_verification: false # enables google site verification
 enable_bing_verification: false # enables bing site verification
 enable_masonry: true # enables automatic project cards arrangement
