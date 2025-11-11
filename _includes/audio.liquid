@@ -10,10 +10,18 @@
         {% include audio.liquid path="assets/audio/mypronunciation.txt" %}
     {%- endcomment -%}
 
-    <span class="pronunciation-wrapper audio-base64-wrapper" role="button" tabindex="0"
-          data-audio-src="{{ src }}"
-          {%- if include.title %} title="{{ include.title }}"{% endif %}
-          {%- if include.alt %} aria-label="{{ include.alt }}"{% endif %}>
+    <span
+      class="pronunciation-wrapper audio-base64-wrapper"
+      role="button"
+      tabindex="0"
+      data-audio-src="{{ src }}"
+      {%- if include.title %}
+        title="{{ include.title }}"
+      {% endif %}
+      {%- if include.alt %}
+        aria-label="{{ include.alt }}"
+      {% endif %}
+    >
       {%- if include.label %}
         {{ include.label }}
       {%- else -%}
@@ -34,12 +42,24 @@
   <figure>
     <audio
       src="{% if include.cache_bust %}{{ src | bust_file_cache }}{% else %}{{ src }}{% endif %}"
-      {%- if include.class %} class="{{ include.class }}"{% endif -%}
-      {%- if include.title %} title="{{ include.title }}"{% endif -%}
-      {%- if include.autoplay %} autoplay{% endif -%}
-      {%- if include.controls %} controls{% endif -%}
-      {%- if include.loop %} loop{% endif -%}
-      {%- if include.muted %} muted{% endif -%}
+      {%- if include.class %}
+        class="{{ include.class }}"
+      {% endif -%}
+      {%- if include.title %}
+        title="{{ include.title }}"
+      {% endif -%}
+      {%- if include.autoplay %}
+        autoplay
+      {% endif -%}
+      {%- if include.controls %}
+        controls
+      {% endif -%}
+      {%- if include.loop %}
+        loop
+      {% endif -%}
+      {%- if include.muted %}
+        muted
+      {% endif -%}
     ></audio>
 
     {%- if include.caption %}

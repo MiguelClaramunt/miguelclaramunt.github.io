@@ -16,7 +16,7 @@ This small initial impulse led to a deeper dive. I began researching TMB (Barcel
 
 The project culminated in a set of replicas of these metro tickets that served as bookmarks, printed on satin-finish cardstock at a [local print shop](https://www.paperam.net) in Ciutat Vella. Though already familiar with Illustrator, this project pushed me to manage a larger personal endeavor.
 
-Looking ahead, I aim to refine the design files to make color changes easier and to learn more about professional printing concepts, like [bleed](https://en.wikipedia.org/wiki/Bleed_(printing)), to make the final product even sharper and more consistent.
+Looking ahead, I aim to refine the design files to make color changes easier and to learn more about professional printing concepts, like [bleed](<https://en.wikipedia.org/wiki/Bleed_(printing)>), to make the final product even sharper and more consistent.
 
 <div class="spotlight-group">
     <a class="spotlight" href="/assets/img/projects/tmb_1.webp">

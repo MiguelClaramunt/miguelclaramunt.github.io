@@ -14,9 +14,20 @@
   cursor: pointer;
   position: relative;
   line-height: 1.1;
-  transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
   vertical-align: baseline; /* align with surrounding text */
-  font-family: "Noto Sans", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    "Noto Sans",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   box-sizing: border-box;
 }
 
@@ -28,14 +39,24 @@
      Keep the element's border at 1px transparent so its box size doesn't change. */
   background: #eef3f7;
   border: 1px solid transparent;
-  box-shadow: 0 0 0 3px rgba(var(--global-theme-color-rgb, 31,94,128), 0.14); /* subtle ring */
+  box-shadow: 0 0 0 3px rgba(var(--global-theme-color-rgb, 31, 94, 128), 0.14); /* subtle ring */
 }
 
-.pronunciation-wrapper:active { transform: translateY(1px); }
+.pronunciation-wrapper:active {
+  transform: translateY(1px);
+}
 
 .ipa-notation {
   /* Prefer fonts with strong IPA coverage */
-  font-family: "Noto Sans", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    "Noto Sans",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-style: italic;
   /* Slightly stronger weight so IPA stands out in body text */
   font-weight: 400;
@@ -45,12 +66,14 @@
   margin: 0;
   background: none;
   cursor: inherit;
-  transition: color .18s ease;
+  transition: color 0.18s ease;
 }
 
 .pronunciation-wrapper:hover .ipa-notation,
 .pronunciation-wrapper:active .ipa-notation,
-.pronunciation-wrapper.playing .ipa-notation { color: var(--global-theme-color); }
+.pronunciation-wrapper.playing .ipa-notation {
+  color: var(--global-theme-color);
+}
 
 .pronunciation-speaker {
   display: inline-flex;
@@ -67,32 +90,75 @@
     vertical shift. */
   position: relative;
   transform: translateY(0em);
-  transition: color .18s ease, transform .18s ease;
+  transition:
+    color 0.18s ease,
+    transform 0.18s ease;
 }
 
-.pronunciation-wrapper:hover .pronunciation-speaker, 
-.pronunciation-wrapper.playing .pronunciation-speaker { color: var(--global-theme-color); }
+.pronunciation-wrapper:hover .pronunciation-speaker,
+.pronunciation-wrapper.playing .pronunciation-speaker {
+  color: var(--global-theme-color);
+}
 
-.pronunciation-wrapper.playing .pronunciation-speaker { animation: pulse 1.5s infinite; }
-.pronunciation-wrapper.error .pronunciation-speaker { color: #d32f2f; animation: shake .5s ease-in-out; }
+.pronunciation-wrapper.playing .pronunciation-speaker {
+  animation: pulse 1.5s infinite;
+}
+.pronunciation-wrapper.error .pronunciation-speaker {
+  color: #d32f2f;
+  animation: shake 0.5s ease-in-out;
+}
 
-.pronunciation-wrapper:focus { outline: 2px solid var(--global-theme-color); outline-offset: 2px; }
+.pronunciation-wrapper:focus {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 2px;
+}
 
 /* Accessibility: enlarge tap target on very small screens */
 @media (max-width: 600px) {
-  .pronunciation-wrapper { padding: 0.25rem 0.5rem; }
+  .pronunciation-wrapper {
+    padding: 0.25rem 0.5rem;
+  }
 }
 
-@keyframes pulse { 0% { transform: translateY(-0.06em) scale(1);} 50% { transform: translateY(-0.06em) scale(1.08);} 100% { transform: translateY(-0.06em) scale(1);} }
-@keyframes shake { 0%,100% { transform: translateX(0);} 25% { transform: translateX(-2px);} 75% { transform: translateX(2px);} }
+@keyframes pulse {
+  0% {
+    transform: translateY(-0.06em) scale(1);
+  }
+  50% {
+    transform: translateY(-0.06em) scale(1.08);
+  }
+  100% {
+    transform: translateY(-0.06em) scale(1);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+}
 
 /* Reduced motion */
-@media (prefers-reduced-motion: reduce) { .pronunciation-wrapper.playing .pronunciation-speaker { animation: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .pronunciation-wrapper.playing .pronunciation-speaker {
+    animation: none;
+  }
+}
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-  .pronunciation-wrapper { gap: 0.2rem; }
-  .ipa-notation { font-size: 0.9em; }
+  .pronunciation-wrapper {
+    gap: 0.2rem;
+  }
+  .ipa-notation {
+    font-size: 0.9em;
+  }
   .pronunciation-speaker {
     padding: 0.2rem;
     min-width: 1.2rem;
@@ -102,13 +168,21 @@
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  .ipa-notation { border-bottom: 2px solid; }
+  .ipa-notation {
+    border-bottom: 2px solid;
+  }
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .ipa-notation,
-  .pronunciation-speaker { transition: none; }
-  .pronunciation-speaker.playing { animation: none; }
-  .pronunciation-speaker.error { animation: none; }
+  .pronunciation-speaker {
+    transition: none;
+  }
+  .pronunciation-speaker.playing {
+    animation: none;
+  }
+  .pronunciation-speaker.error {
+    animation: none;
+  }
 }
