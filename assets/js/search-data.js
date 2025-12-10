@@ -16,13 +16,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-blog",
-          title: "blog",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/blog/";
-          },
         },{id: "nav-publications-amp-talks",
           title: "publications &amp; talks",
           description: "",
@@ -37,7 +30,58 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "news-participated-in-eloquence-webcafé-detecting-and-mitigating-bias-in-ai-systems-with-javier-garcía-gilabert-we-discussed-practical-approaches-to-detect-bias-mitigation-strategies-evaluation-metrics-and-operational-considerations-for-deploying-fairer-models",
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "post-site-update-migrating-to-al-folio-for-a-data-driven-resume",
+        
+          title: "Site Update: Migrating to al-folio for a Data-Driven Resume",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/updates-personal-website/";
+          
+        },
+      },{id: "post-building-a-simple-personal-webpage-with-github-pages-and-jekyll",
+        
+          title: "Building a Simple Personal Webpage with GitHub Pages and Jekyll",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/building-personal-webpage/";
+          
+        },
+      },{id: "post-deploying-an-openai-compatible-endpoint-using-fastchat",
+        
+          title: "Deploying an OpenAI Compatible Endpoint using FastChat",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/easy-fastchat-implementation/";
+          
+        },
+      },{id: "post-keeping-my-product-database-lean-eliminating-redundancy-with-a-clever-trigger",
+        
+          title: "Keeping My Product Database Lean: Eliminating Redundancy with a Clever Trigger",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/mercatracker-sql-trigger/";
+          
+        },
+      },{id: "news-participated-in-eloquence-webcafé-detecting-and-mitigating-bias-in-ai-systems-with-javier-garcía-gilabert-we-discussed-practical-approaches-to-detect-bias-mitigation-strategies-evaluation-metrics-and-operational-considerations-for-deploying-fairer-models",
           title: 'Participated in ELOQUENCE Webcafé: “Detecting and Mitigating Bias in AI Systems” with Javier...',
           description: "",
           section: "News",},{id: "projects-eloquence",
