@@ -10,13 +10,13 @@ images:
   spotlight: true
 ---
 
-In 2020, I stumbled upon a low-quality picture online of a set of Barcelona metro tickets from the 1980s. The vintage design immediately sparked an idea: I could vectorize the tickets to create a unique wallpaper or perhaps something more.
+In 2020, I stumbled upon a low-quality picture online of a set of Barcelona metro tickets from the 1980s. The vintage design sparked an idea: vectorizing them. I initially considered a digital wallpaper, but the project quickly evolved into something more fun.
 
-This small initial impulse led to a deeper dive. I began researching TMB (Barcelona's Metropolitan Transport) multi-trip cards, finding [sites exploring their history](https://www.autobusesbcn.es/misc/cobros.html) and collector photos. At this moment, I realized the reverse side was just as fascinating, featuring period advertisements. I focused on recreating the simpler designs as some of them were quite intricate and challenging to replicate using Adobe Illustrator with my limited skills.
+I began researching TMB (Transports Metropolitans de Barcelona) multi-trip cards, finding [sites exploring their history](https://www.autobusesbcn.es/misc/cobros.html) and collector photos. At this moment, I realized the reverse were just as fascinating as the fronts: they had period advertisements. I focused on recreating the simpler designs as some of them were quite intricate and challenging to replicate using Adobe Illustrator with my limited skills.
 
-The project culminated in a set of replicas of these metro tickets that served as bookmarks, printed on satin-finish cardstock at a [local print shop](https://www.paperam.net) in Ciutat Vella. Though already familiar with Illustrator, this project pushed me to manage a larger personal endeavor.
+The result was a set of physical replicas used as bookmarks, printed on satin-finish cardstock at a [local shop](https://www.paperam.net) in Ciutat Vella. While I was already familiar with Illustrator, managing this project end-to-end pushed me to refine my workflow significantly.
 
-Looking ahead, I aim to refine the design files to make color changes easier and to learn more about professional printing concepts, like [bleed](<https://en.wikipedia.org/wiki/Bleed_(printing)>), to make the final product even sharper and more consistent.
+Looking ahead, I plan to refactor the design files in order to simplify coloring them. I also want to dive deeper into professional printing standards, specifically proper handling of [bleed],(<https://en.wikipedia.org/wiki/Bleed_(printing)>) to ensure the next batch is even sharper.
 
 <div class="spotlight-group">
     <a class="spotlight" href="/assets/img/projects/tmb_1.webp">
