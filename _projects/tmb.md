@@ -16,7 +16,7 @@ I began researching TMB (Transports Metropolitans de Barcelona) multi-trip cards
 
 The result was a set of physical replicas used as bookmarks, printed on satin-finish cardstock at a [local shop](https://www.paperam.net) in Ciutat Vella. While I was already familiar with Illustrator, managing this project end-to-end pushed me to refine my workflow significantly.
 
-Looking ahead, I plan to refactor the design files in order to simplify coloring them. I also want to dive deeper into professional printing standards, specifically proper handling of [bleed],(<https://en.wikipedia.org/wiki/Bleed_(printing)>) to ensure the next batch is even sharper.
+Looking ahead, I plan to refactor the design files in order to simplify coloring them. I also want to dive deeper into professional printing standards, specifically proper handling of [bleed](<https://en.wikipedia.org/wiki/Bleed_(printing)>), to ensure the next batch is even sharper.
 
 <div class="spotlight-group">
     <a class="spotlight" href="/assets/img/projects/tmb_1.webp">
