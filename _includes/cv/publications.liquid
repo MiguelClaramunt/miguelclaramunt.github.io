@@ -42,6 +42,18 @@
               </h6>
             {% endif %}
 
+            {% if entry.authors %}
+              <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
+                {% for author in entry.authors %}
+                  {% if forloop.last %}
+                    {{ author }}
+                  {% else %}
+                    {{ author }},
+                  {% endif %}
+                {% endfor %}
+              </h6>
+            {% endif %}
+
             {% if entry.summary %}
               <p class="ml-1 ml-md-4">{{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
             {% endif %}
@@ -62,6 +74,18 @@
             {% if publisher_name != '' %}
               <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
                 <em>{{ publisher_name }}</em>
+              </h6>
+            {% endif %}
+
+            {% if entry.authors %}
+              <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
+                {% for author in entry.authors %}
+                  {% if forloop.last %}
+                    {{ author }}
+                  {% else %}
+                    {{ author }},
+                  {% endif %}
+                {% endfor %}
               </h6>
             {% endif %}
 
