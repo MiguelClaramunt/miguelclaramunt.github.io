@@ -165,9 +165,31 @@ layout: default
             {% continue %}
           {% endif %}
 
+          {% comment %} Pretty Title Mapping {% endcomment %}
+          {% case section_title_low %}
+            {% when 'education' %}
+              {% assign pretty_title = 'Education' %}
+            {% when 'publications' %}
+              {% assign pretty_title = 'Publications' %}
+            {% when 'presentation_&_talks' %}
+              {% assign pretty_title = 'Presentation & Talks' %}
+            {% when 'honors_&_awards' %}
+              {% assign pretty_title = 'Honors & Awards' %}
+            {% when 'skills' %}
+              {% assign pretty_title = 'Skills' %}
+            {% when 'certificates' %}
+              {% assign pretty_title = 'Certificates' %}
+            {% when 'projects' %}
+              {% assign pretty_title = 'Projects' %}
+            {% when 'references' %}
+              {% assign pretty_title = 'References' %}
+            {% else %}
+              {% assign pretty_title = section_title | replace: '_', ' ' | capitalize %}
+          {% endcase %}
+
           <a class="anchor" id="{{ section_title | slugify }}"></a>
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ section_title }}</h3>
+            <h3 class="card-title font-weight-medium">{{ pretty_title }}</h3>
             <div>
               {% if section_title_low == 'education' %}
                 {% assign entries = section_entries %}
