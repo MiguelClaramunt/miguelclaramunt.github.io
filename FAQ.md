@@ -18,11 +18,7 @@ Here are some frequently asked questions. If you have a different question, plea
   - [I am trying to deploy my site, but it fails with Could not find gem 'jekyll-diagrams' in locally installed gems. How do I fix that?](#i-am-trying-to-deploy-my-site-but-it-fails-with-could-not-find-gem-jekyll-diagrams-in-locally-installed-gems-how-do-i-fix-that)
   - [How can I update Academicons version on the template](#how-can-i-update-academicons-version-on-the-template)
   - [How can I update Font Awesome version on the template](#how-can-i-update-font-awesome-version-on-the-template)
-<<<<<<< HEAD
   - [How can I update Tabler Icons version on the template](#how-can-i-update-tabler-icons-version-on-the-template)
-  - [What do all these GitHub actions/workflows mean?](#what-do-all-these-github-actionsworkflows-mean)
-  - [How can I use Google Search Console ID on the template?](#how-can-i-use-google-search-console-id-on-the-template)
-=======
   - [What do all these GitHub actions/workflows mean?](#what-do-all-these-github-actionsworkflows-mean)
   - [How can I use Google Search Console ID on the template?](#how-can-i-use-google-search-console-id-on-the-template)
   - [What are Code Wiki and DeepWiki?](#what-are-code-wiki-and-deepwiki)
@@ -30,7 +26,6 @@ Here are some frequently asked questions. If you have a different question, plea
     - [What they do](#what-they-do)
     - [Limitations](#limitations)
     - [Access these tools](#access-these-tools)
->>>>>>> upstream/main
 
 <!--te-->
 

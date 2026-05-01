@@ -4,14 +4,12 @@ Here we will give you some tips on how to customize the website. One important t
 
 <<<<<<< HEAD
 <!--ts-->
-=======
-> **Note for users without coding experience:** You do **not** need to understand the technology stack or have any coding background to create and customize your own website with al-folio. This template was specifically designed to be accessible to academics and researchers from all backgrounds. You can create a fully functional website by simply editing configuration files and adding content in Markdown, no coding required.
-
-<!--ts-->
 
 - [Customize](#customize)
   - [Project structure](#project-structure)
   - [Configuration](#configuration)
+  - [Modifying the CV information](#modifying-the-cv-information)
+- [What this means is, if there is no resume data defined in <a href="_config.yml">_config.yml</a> and loaded via a json file, it will load the contents of <a href="_data/cv.yml">_data/cv.yml</a>. If you want to use the <a href="_data/cv.yml">_data/cv.yml</a> file as the source of your CV, you must delete the <a href="assets/json/resume.json">assets/json/resume.json</a> file.](_config.yml)
   - [GitHub Copilot Customization Agent](#github-copilot-customization-agent)
     - [What the Agent Can Help With](#what-the-agent-can-help-with)
     - [How to Use the Agent](#how-to-use-the-agent)
@@ -24,18 +22,20 @@ Here we will give you some tips on how to customize the website. One important t
     - [Backend](#backend)
     - [Build and Deployment](#build-and-deployment)
     - [Key Integration Points](#key-integration-points)
-  - [Modifying the CV information](#modifying-the-cv-information)
+  - [Modifying the CV information](#modifying-the-cv-information-1)
     - [RenderCV Format (Recommended)](#rendercv-format-recommended)
     - [JSONResume Format](#jsonresume-format)
     - [Using Both Formats Simultaneously](#using-both-formats-simultaneously)
     - [Automatic PDF Generation (RenderCV only)](#automatic-pdf-generation-rendercv-only)
   - [Modifying the user and repository information](#modifying-the-user-and-repository-information)
+- [&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD](#-head)
     - [Configuring external service URLs](#configuring-external-service-urls)
   - [Creating new pages](#creating-new-pages)
   - [Creating new blog posts](#creating-new-blog-posts)
   - [Creating new projects](#creating-new-projects)
   - [Adding some news](#adding-some-news)
   - [Adding Collections](#adding-collections)
+- [To access the collections, you can use the site.COLLECTION_NAME variable in your templates.](#to-access-the-collections-you-can-use-the-sitecollection_name-variable-in-your-templates)
     - [Creating a new collection](#creating-a-new-collection)
     - [Using frontmatter fields in your collection](#using-frontmatter-fields-in-your-collection)
     - [Creating a teachings collection](#creating-a-teachings-collection)
@@ -53,9 +53,13 @@ Here we will give you some tips on how to customize the website. One important t
     - [Author annotation](#author-annotation)
     - [Buttons (through custom bibtex keywords)](#buttons-through-custom-bibtex-keywords)
   - [Changing theme color](#changing-theme-color)
-  - [Customizing layout and UI](#customizing-layout-and-ui)
   - [Adding social media information](#adding-social-media-information)
+- [You can add your social media links by adding the specified information in the <a href="_data/socials.yml">_data/socials.yml</a> file. This information will appear at the bottom of the About page and in the search results by default, but this could be changed to appear at the header of the page by setting enable_navbar_social: true and doesn't appear in the search by setting socials_in_search: false, both in <a href="_config.yml">_config.yml</a>.](_data/socials.yml)
+  - [Customizing layout and UI](#customizing-layout-and-ui)
+  - [Adding social media information](#adding-social-media-information-1)
   - [Adding a newsletter](#adding-a-newsletter)
+  - [Removing content](#removing-content)
+- [Since this template have a lot of content, you may want to remove some of it. The easiest way to achieve this and avoid merge conflicts when updating your code (as <a href="https://github.com/alshedivat/al-folio/pull/2933#issuecomment-2571271117">pointed by CheariX </a>) is to add the unwanted files to the exclude section in your _config.yml file instead of actually deleting them, for example:](https://github.com/alshedivat/al-folio/pull/2933#issuecomment-2571271117)
   - [Configuring search features](#configuring-search-features)
   - [Social media previews](#social-media-previews)
     - [How to enable](#how-to-enable)
@@ -72,12 +76,13 @@ Here we will give you some tips on how to customize the website. One important t
     - [Enable the calendar script for your page](#enable-the-calendar-script-for-your-page)
     - [Optional: Customize the calendar style](#optional-customize-the-calendar-style)
   - [Updating third-party libraries](#updating-third-party-libraries)
-  - [Removing content](#removing-content)
+  - [Removing content](#removing-content-1)
     - [Removing the blog page](#removing-the-blog-page)
     - [Removing the news section](#removing-the-news-section)
     - [Removing the projects page](#removing-the-projects-page)
     - [Removing the publications page](#removing-the-publications-page)
     - [Removing the repositories page](#removing-the-repositories-page)
+- [&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD](#-head-1)
     - [You can also remove pages through commenting out front-matter blocks](#you-can-also-remove-pages-through-commenting-out-front-matter-blocks)
   - [Adding Token for Lighthouse Badger](#adding-token-for-lighthouse-badger)
     - [Personal Access Token (fine-grained) Permissions for Lighthouse Badger:](#personal-access-token-fine-grained-permissions-for-lighthouse-badger)
@@ -97,7 +102,6 @@ Here we will give you some tips on how to customize the website. One important t
     - [Why is a PAT required?](#why-is-a-pat-required)
     - [How to set up the PAT](#how-to-set-up-the-pat)
 
->>>>>>> upstream/main
 <!--te-->
 
 ## Project structure

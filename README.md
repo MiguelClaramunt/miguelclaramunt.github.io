@@ -287,21 +287,21 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
     - [Mobile](#mobile)
   - [Table Of Contents](#table-of-contents)
   - [Getting started](#getting-started)
+  - [Getting started](#getting-started-1)
   - [Installing and Deploying](#installing-and-deploying)
   - [Customizing](#customizing)
-<<<<<<< HEAD
-=======
+- [&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD](#-head-1)
   - [GitHub Copilot Agents](#github-copilot-agents)
     - [Customization Agent](#customization-agent)
     - [Documentation Agent](#documentation-agent)
   - [Documentation](#documentation)
->>>>>>> upstream/main
   - [Features](#features)
     - [Light/Dark Mode](#lightdark-mode)
     - [CV](#cv)
     - [People](#people)
     - [Publications](#publications)
     - [Collections](#collections)
+- [You can easily create your own collections, apps, short stories, courses, or whatever your creative work is. To do this, edit the collections in the <a href="_config.yml">_config.yml</a> file, create a corresponding folder, and create a landing page for your collection, similar to _pages/projects.md.](_config.yml)
     - [Layouts](#layouts)
       - [The iconic style of Distill](#the-iconic-style-of-distill)
       - [Full support for math &amp; code](#full-support-for-math--code)
@@ -310,20 +310,19 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
       - [GitHub's repositories and user stats](#githubs-repositories-and-user-stats)
       - [Theming](#theming)
       - [Social media previews](#social-media-previews)
+- [You will then need to configure what image to display in your site's social media previews. This can be configured on a per-page basis, by setting the og_image page variable. If for an individual page this variable is not set, then the theme will fall back to a site-wide og_image variable, configurable in your <a href="_config.yml">_config.yml</a>. In both the page-specific and site-wide cases, the og_image variable needs to hold the URL for the image you wish to display in social media previews.](_config.yml)
       - [Atom (RSS-like) Feed](#atom-rss-like-feed)
       - [Related posts](#related-posts)
       - [Code quality checks](#code-quality-checks)
-<<<<<<< HEAD
-=======
+- [&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD](#-head-2)
       - [GDPR Cookie Consent Dialog](#gdpr-cookie-consent-dialog)
->>>>>>> upstream/main
   - [FAQ](#faq)
   - [Contributing](#contributing)
     - [Maintainers](#maintainers)
     - [All Contributors](#all-contributors)
   - [Star History](#star-history)
   - [License](#license)
-<<<<<<< HEAD
+
   <!--te-->
 
 ## Getting started
