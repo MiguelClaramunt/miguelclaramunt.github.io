@@ -120,16 +120,7 @@
 
 {% if page.tikzjax %}
   <!-- Tikzjax -->
-<<<<<<< HEAD
-  <script
-    defer
-    src="https://tikzjax.com/v1/tikzjax.js"
-    integrity="sha256-+1qyucCXRZJrCg3lm3KxRt/7WXaYhBid4/1XJRHGB1E="
-    crossorigin="anonymous"
-  ></script>
-=======
   <script defer src="{{ '/assets/js/tikzjax.min.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
->>>>>>> upstream/main
 {% endif %}
 
 {% if page.typograms %}
@@ -198,13 +189,6 @@
   <!-- Removed Pseudocode -->
 {% endif %}
 
-<<<<<<< HEAD
-{% if site.enable_google_analytics %}
-  <!-- Analytics -->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-  <script defer src="{{ '/assets/js/google-analytics-setup.js' | relative_url }}"></script>
-=======
 {% if site.enable_cookie_consent %}
   <!-- Cookie Consent -->
   <script
@@ -233,18 +217,10 @@
     defer
     src="{{ '/assets/js/google-analytics-setup.js' | relative_url }}"
   ></script>
->>>>>>> upstream/main
 {% endif %}
 
 {% if site.enable_cronitor_analytics %}
   <!-- Cronitor RUM -->
-<<<<<<< HEAD
-  <script async src="https://rum.cronitor.io/script.js"></script>
-  <script defer src="{{ '/assets/js/cronitor-analytics-setup.js' | relative_url }}"></script>
-{% endif %}
-{% if site.enable_pirsch_analytics %}
-  <script
-=======
   <script
     {% if site.enable_cookie_consent %}
       type="text/plain" data-category="analytics"
@@ -265,7 +241,6 @@
     {% if site.enable_cookie_consent %}
       type="text/plain" data-category="analytics"
     {% endif %}
->>>>>>> upstream/main
     defer
     src="https://api.pirsch.io/pa.js"
     id="pianjs"
@@ -273,10 +248,6 @@
   ></script>
 {% endif %}
 {% if site.enable_openpanel_analytics %}
-<<<<<<< HEAD
-  <script defer src="{{ '/assets/js/open-panel-analytics-setup.js' | relative_url }}"></script>
-  <script async defer src="https://openpanel.dev/op1.js"></script>
-=======
   <script
     {% if site.enable_cookie_consent %}
       type="text/plain" data-category="analytics"
@@ -292,7 +263,6 @@
     defer
     src="https://openpanel.dev/op1.js"
   ></script>
->>>>>>> upstream/main
 {% endif %}
 
 {% if site.enable_progressbar %}

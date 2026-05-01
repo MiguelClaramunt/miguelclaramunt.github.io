@@ -1,17 +1,10 @@
 ---
-<<<<<<< HEAD
 regenerate: true
-=======
->>>>>>> upstream/main
 layout: default
 permalink: /blog/
 title: blog
 nav: true
-<<<<<<< HEAD
 nav_order: 9
-=======
-nav_order: 1
->>>>>>> upstream/main
 pagination:
   enabled: true
   collection: posts

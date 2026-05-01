@@ -1,35 +1,5 @@
 // rotating + flipping icons
 // -------------------------
-<<<<<<< HEAD
-
-.#{$fa-css-prefix}-rotate-90 {
-  transform: rotate(90deg);
-}
-
-.#{$fa-css-prefix}-rotate-180 {
-  transform: rotate(180deg);
-}
-
-.#{$fa-css-prefix}-rotate-270 {
-  transform: rotate(270deg);
-}
-
-.#{$fa-css-prefix}-flip-horizontal {
-  transform: scale(-1, 1);
-}
-
-.#{$fa-css-prefix}-flip-vertical {
-  transform: scale(1, -1);
-}
-
-.#{$fa-css-prefix}-flip-both,
-.#{$fa-css-prefix}-flip-horizontal.#{$fa-css-prefix}-flip-vertical {
-  transform: scale(-1, -1);
-}
-
-.#{$fa-css-prefix}-rotate-by {
-  transform: rotate(var(--#{$fa-css-prefix}-rotate-angle, 0));
-=======
 @use 'variables' as v;
 
 .#{v.$css-prefix}-rotate-90 {
@@ -59,5 +29,4 @@
 
 .#{v.$css-prefix}-rotate-by {
   transform: rotate(var(--#{v.$css-prefix}-rotate-angle, 0));
->>>>>>> upstream/main
 }

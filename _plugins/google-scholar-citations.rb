@@ -9,10 +9,7 @@ end
 module Jekyll
   class GoogleScholarCitationsTag < Liquid::Tag
     Citations = { }
-<<<<<<< HEAD
-=======
     CITED_BY_REGEX = /Cited by (\d+[,\d]*)/
->>>>>>> upstream/main
 
     def initialize(tag_name, params, tokens)
       super
@@ -55,11 +52,7 @@ module Jekyll
 
           if !description_meta.empty?
             cited_by_text = description_meta[0]['content']
-<<<<<<< HEAD
-            matches = cited_by_text.match(/Cited by (\d+[,\d]*)/)
-=======
             matches = cited_by_text.match(CITED_BY_REGEX)
->>>>>>> upstream/main
 
             if matches
               citation_count = matches[1].sub(",", "").to_i
@@ -67,11 +60,7 @@ module Jekyll
 
           elsif !og_description_meta.empty?
             cited_by_text = og_description_meta[0]['content']
-<<<<<<< HEAD
-            matches = cited_by_text.match(/Cited by (\d+[,\d]*)/)
-=======
             matches = cited_by_text.match(CITED_BY_REGEX)
->>>>>>> upstream/main
 
             if matches
               citation_count = matches[1].sub(",", "").to_i

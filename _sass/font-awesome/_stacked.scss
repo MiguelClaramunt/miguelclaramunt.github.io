@@ -1,51 +1,22 @@
 // stacking icons
 // -------------------------
-<<<<<<< HEAD
-
-.#{$fa-css-prefix}-stack {
-=======
 @use 'variables' as v;
 
 .#{v.$css-prefix}-stack {
->>>>>>> upstream/main
   display: inline-block;
   height: 2em;
   line-height: 2em;
   position: relative;
-<<<<<<< HEAD
-  vertical-align: $fa-stack-vertical-align;
-  width: $fa-stack-width;
-}
-
-.#{$fa-css-prefix}-stack-1x,
-.#{$fa-css-prefix}-stack-2x {
-=======
   vertical-align: v.$stack-vertical-align;
   width: v.$stack-width;
 }
 
 .#{v.$css-prefix}-stack-1x,
 .#{v.$css-prefix}-stack-2x {
->>>>>>> upstream/main
   left: 0;
   position: absolute;
   text-align: center;
   width: 100%;
-<<<<<<< HEAD
-  z-index: var(--#{$fa-css-prefix}-stack-z-index, #{$fa-stack-z-index});
-}
-
-.#{$fa-css-prefix}-stack-1x {
-  line-height: inherit;
-}
-
-.#{$fa-css-prefix}-stack-2x {
-  font-size: 2em;
-}
-
-.#{$fa-css-prefix}-inverse {
-  color: var(--#{$fa-css-prefix}-inverse, #{$fa-inverse});
-=======
   z-index: var(--#{v.$css-prefix}-stack-z-index, #{v.$stack-z-index});
 }
 
@@ -59,5 +30,4 @@
 
 .#{v.$css-prefix}-inverse {
   color: var(--#{v.$css-prefix}-inverse, #{v.$inverse});
->>>>>>> upstream/main
 }

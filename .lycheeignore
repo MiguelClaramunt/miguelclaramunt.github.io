@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-linkedin.com
-reddit.com
-=======
 .github/instructions/bibtex-bibliography.instructions.md
 .github/instructions/liquid-templates.instructions.md
 .github/instructions/markdown-content.instructions.md
@@ -16,4 +12,3 @@ https://www.linkedin.com/
 https://www.reddit.com/
 README.md
 SEO.md
->>>>>>> upstream/main

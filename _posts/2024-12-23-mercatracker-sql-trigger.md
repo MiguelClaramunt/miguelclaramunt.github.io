@@ -29,7 +29,6 @@ The key was to leverage triggers—a special type of automated SQL code that exe
 - `rowid = NEW.rowid`: This ensures that only rows with identical `rowid` values are compared for duplicates.
 
 - `EXISTS (SELECT 1 FROM dumps ...)`: The heart of the solution lies here. We check if there already exists a row in my 'dumps' table that:
-
   - Has an id matching the `NEW.id` being added.
   - Has a date `ymd` which is the last consecutive record to the new row inserted `NEW.ymd`.
   - Has the same `content` as the newly inserted data.

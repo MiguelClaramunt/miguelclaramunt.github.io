@@ -67,11 +67,7 @@
       {% endif %}
 
       <d-article>
-<<<<<<< HEAD
-        {% if page.toc %}
-=======
         {% if page.toc and page.toc.size > 0 %}
->>>>>>> upstream/main
           <d-contents>
             <nav class="l-text figcaption">
               <h3>Contents</h3>
@@ -91,9 +87,6 @@
               {% endfor %}
             </nav>
           </d-contents>
-<<<<<<< HEAD
-        {% endif %}
-=======
 
         {% elsif page.toc == true %}
           <d-contents>
@@ -103,8 +96,6 @@
             </nav>
           </d-contents>
         {% endif %}
-
->>>>>>> upstream/main
         {{ content }}
       </d-article>
 

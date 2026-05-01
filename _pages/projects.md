@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 regenerate: true
 layout: page
 title: projects
@@ -8,15 +7,6 @@ description: A showcase of projects I've worked on and contributed to over the y
 nav: true
 nav_order: 3
 display_categories: [work, personal]
-=======
-layout: page
-title: projects
-permalink: /projects/
-description: A growing collection of your cool projects.
-nav: true
-nav_order: 3
-display_categories: [work, fun]
->>>>>>> upstream/main
 horizontal: false
 ---
 

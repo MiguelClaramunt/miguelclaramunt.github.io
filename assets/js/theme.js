@@ -29,11 +29,8 @@ let applyTheme = () => {
   setHighlight(theme);
   setGiscusTheme(theme);
   setSearchTheme(theme);
-<<<<<<< HEAD
-=======
   setCookieConsentTheme(theme);
   updateCalendarUrl();
->>>>>>> upstream/main
 
   // if mermaid is not defined, do nothing
   if (typeof mermaid !== "undefined") {
@@ -249,8 +246,6 @@ let setSearchTheme = (theme) => {
   }
 };
 
-<<<<<<< HEAD
-=======
 let setCookieConsentTheme = (theme) => {
   // Sync cookie consent modal with site's theme
   // The cookie consent library supports dark mode via the cc--darkmode class
@@ -262,8 +257,6 @@ let setCookieConsentTheme = (theme) => {
     htmlElement.classList.remove("cc--darkmode");
   }
 };
-
->>>>>>> upstream/main
 let transTheme = () => {
   document.documentElement.classList.add("transition");
   window.setTimeout(() => {
@@ -316,8 +309,6 @@ let initTheme = () => {
     applyTheme();
   });
 };
-<<<<<<< HEAD
-=======
 
 // Get the appropriate background color for Google Calendar based on current theme
 let getCalendarBgColor = () => {
@@ -348,4 +339,3 @@ let updateCalendarUrl = () => {
     iframe.src = getCalendarUrl(iframe.dataset.calendarId, iframe.dataset.timezone || "UTC");
   }
 };
->>>>>>> upstream/main

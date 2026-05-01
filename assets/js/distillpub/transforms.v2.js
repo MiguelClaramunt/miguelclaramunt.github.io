@@ -436,11 +436,7 @@
   }
 
   function createCommonjsModule(fn, module) {
-<<<<<<< HEAD
-    return (module = { exports: {} }), fn(module, module.exports), module.exports;
-=======
     return ((module = { exports: {} }), fn(module, module.exports), module.exports);
->>>>>>> upstream/main
   }
 
   var bibtexParse = createCommonjsModule(function (module, exports) {
