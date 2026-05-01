@@ -172,10 +172,10 @@ layout: default
               {% if section_title_low == 'education' %}
                 {% assign entries = section_entries %}
                 {% include cv/education.liquid %}
-              {% elsif section_title_low == 'awards' or section_title == 'Honors and Awards' or section_title == 'honors_&_awards' %}
+              {% elsif section_title_low == 'awards' or section_title == 'Honors and Awards' or section_title_low == 'honors_&_awards' %}
                 {% assign entries = section_entries %}
                 {% include cv/awards.liquid %}
-              {% elsif section_title_low == 'publications' or section_title == 'presentation_&_talks' %}
+              {% elsif section_title_low == 'publications' or section_title_low == 'presentation_&_talks' %}
                 {% assign entries = section_entries %}
                 {% include cv/publications.liquid %}
               {% elsif section_title_low == 'skills' %}
