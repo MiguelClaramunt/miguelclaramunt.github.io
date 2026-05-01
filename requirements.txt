@@ -1,1 +1,7 @@
 nbconvert
+<<<<<<< HEAD
+=======
+pyyaml
+rendercv[full]
+scholarly
+>>>>>>> upstream/main

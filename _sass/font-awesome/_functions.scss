@@ -1,5 +1,6 @@
 // functions
 // --------------------------
+<<<<<<< HEAD
 
 // fa-content: convenience function used to set content property
 @function fa-content($fa-var) {
@@ -54,4 +55,11 @@
     $remainder: fa-divide($remainder * 10, $divisor, $precision - 1) * .1;
   }
   @return ($quotient + $remainder) * $sign;
+=======
+@use "sass:string";
+
+// fa-content: convenience function used to set content property
+@function fa-content($var) {
+  @return string.unquote("\"#{ $var }\"");
+>>>>>>> upstream/main
 }

@@ -25,7 +25,16 @@ module ExternalPosts
     def fetch_from_rss(site, src)
       xml = HTTParty.get(src['rss_url']).body
       return if xml.nil?
+<<<<<<< HEAD
       feed = Feedjira.parse(xml)
+=======
+      begin
+        feed = Feedjira.parse(xml)
+      rescue StandardError => e
+        puts "Error parsing RSS feed from #{src['rss_url']} - #{e.message}"
+        return
+      end
+>>>>>>> upstream/main
       process_entries(site, src, feed.entries)
     end
 
@@ -37,11 +46,19 @@ module ExternalPosts
           content: e.content,
           summary: e.summary,
           published: e.published
+<<<<<<< HEAD
         })
       end
     end
 
     def create_document(site, source_name, url, content)
+=======
+        }, src)
+      end
+    end
+
+    def create_document(site, source_name, url, content, src = {})
+>>>>>>> upstream/main
       # check if title is composed only of whitespace or foreign characters
       if content[:title].gsub(/[^\w]/, '').strip.empty?
         # use the source name and last url segment as fallback
@@ -62,6 +79,18 @@ module ExternalPosts
       doc.data['description'] = content[:summary]
       doc.data['date'] = content[:published]
       doc.data['redirect'] = url
+<<<<<<< HEAD
+=======
+      
+      # Apply default categories and tags from source configuration
+      if src['categories'] && src['categories'].is_a?(Array) && !src['categories'].empty?
+        doc.data['categories'] = src['categories']
+      end
+      if src['tags'] && src['tags'].is_a?(Array) && !src['tags'].empty?
+        doc.data['tags'] = src['tags']
+      end
+      
+>>>>>>> upstream/main
       doc.content = content[:content]
       site.collections['posts'].docs << doc
     end
@@ -71,7 +100,11 @@ module ExternalPosts
         puts "...fetching #{post['url']}"
         content = fetch_content_from_url(post['url'])
         content[:published] = parse_published_date(post['published_date'])
+<<<<<<< HEAD
         create_document(site, src['name'], post['url'], content)
+=======
+        create_document(site, src['name'], post['url'], content, src)
+>>>>>>> upstream/main
       end
     end
 

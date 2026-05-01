@@ -1,7 +1,11 @@
 # this file uses prebuilt image in dockerhub
 services:
   jekyll:
+<<<<<<< HEAD
     image: amirpourmand/al-folio:v0.14.6
+=======
+    image: amirpourmand/al-folio:v0.16.3
+>>>>>>> upstream/main
     build: .
     # uncomment these if you are having this issue with the build:
     # /usr/local/bundle/gems/jekyll-4.3.4/lib/jekyll/site.rb:509:in `initialize': Permission denied @ rb_sysopen - /srv/jekyll/.jekyll-cache/.gitignore (Errno::EACCES)

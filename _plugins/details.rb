@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Code from http://movb.de/jekyll-details-support.html
+=======
+# Code from https://movb.de/jekyll-details-support.html
+>>>>>>> upstream/main
 
 module Jekyll
   module Tags

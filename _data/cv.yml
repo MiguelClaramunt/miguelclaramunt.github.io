@@ -1,8 +1,9 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.4/schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
 cv:
   name: Miguel Claramunt
-  location: Barcelona, Spain
+  location: Barcelona, ES
   email: miguel@claramunt.es
+  website: https://claramunt.es
   social_networks:
     - network: LinkedIn
       username: miguelclaramunt
@@ -16,38 +17,39 @@ cv:
         position: Research Engineer
         start_date: 2024-11
         end_date: present
-        location: Barcelona, Spain
-        summary: Engineered state-of-the-art machine translation systems, applying deep learning techniques to enhance multilingual NLP pipelines. Collaborated in cutting-edge research, optimizing translation pipelines and advancing state-of-the-art computational linguistics solutions for large-scale applications.
+        location: Barcelona, ES
+        summary: Engineering state-of-the-art machine translation systems and multilingual NLP pipelines by optimizing large-scale computational linguistics solutions.
       - company: Leeos Merch
-        position: Customer Service Engineer
+        position: Support Infrastructure Engineer
         start_date: 2024-07
         end_date: 2024-09
-        location: Barcelona, Spain
-        summary: Developed Customer Service solutions for 4 online merchandising stores of top Spanish-speaking content creators on YouTube and Twitch.
+        location: Barcelona, ES
+        summary: Architected a scalable Freshdesk infrastructure for high-volume platforms, automating workflows to manage 5.5K+ monthly tickets with >90% SLA compliance.
       - company: SDG Group
-        position: Data Analyst
+        position: "Data Engineer & Analyst (Client: CaixaBank)"
         start_date: 2023-09
         end_date: 2024-04
-        location: Barcelona, Spain
-        summary: Developed BI solutions for CaixaBank, enabling strategic and organizational decision-making. Maintained the 'Mis Ventas' Qlik Sense app serving 40K+ daily users with real-time updates, engineered ETL pipelines processing 500K+ records monthly, and streamlined workflows to reduce costs.
+        location: Barcelona, ES
+        summary: Engineered enterprise ETL pipelines processing 500K+ records monthly and maintained a real-time analytics platform for 40K+ daily users.
       - company: Universitat de València
         position: Undergraduate Research Assistant
         start_date: 2022-04
         end_date: 2022-07
-        location: València, Spain
+        location: València, ES
+        summary: Developed end-to-end NLP applications for fake news classification.
     education:
       - institution: Universitat Pompeu Fabra
         area: Intelligent Interactive Systems
         degree: MSc
         start_date: 2024
         end_date: 2026
-        location: Barcelona, Spain
+        location: Barcelona, ES
       - institution: Universitat de València
         area: Data Science
         degree: BSc
         start_date: 2019
         end_date: 2023
-        location: València, Spain
+        location: València, ES
     honors_&_awards:
       - name: "[City of Valencia Data Visualization Award](https://ludificacion.uv.es/index.php/2021/07/19/los-ganadores-de-los-concursos-de-la-catedra-de-ludificacio-i-govern-obert-a-la-ciutat-de-valencia-reciben-sus-premios/)"
         summary: "Awarded by the Chair of Gamification and Open Government of València (Càtedra de Ludificació i Govern Obert a la Ciutat de València)"
@@ -60,7 +62,7 @@ cv:
         position: Group Leader & Instructor
         start_date: 2017
         end_date: 2022
-        location: València, Spain
+        location: València, ES
         summary: Led a 9-monitor team for 2 years, organizing weekly activities for up to 20 children. Coordinated an 11-day summer camp with a 14-member team, overseeing activities for 50+ children.
     publications:
       - title: "From SALAMANDRA to SALAMANDRATA: BSC Submission for WMT25 General Machine Translation Shared Task"
@@ -107,78 +109,18 @@ design:
   theme: engineeringresumes
   page:
     size: a4
-    # top_margin: 2cm
-    # bottom_margin: 2cm
-    # left_margin: 2cm
-    # right_margin: 2cm
-  # typography:
-  #   font_family:
-  #     body: XCharter
-  #     name: XCharter
-  #     connections: XCharter
-  #     section_titles: XCharter
-  #   font_size:
-  #     name: "25pt"
-  #     section_titles: "1.2em"
-  #   bold:
-  #     name: false
   header:
     connections:
       show_icons: true
       display_urls_instead_of_usernames: false
+  typography:
+    alignment: justified-with-no-hyphenation
   colors:
-  #   name: rgb(0, 0, 0)
     connections: rgb(0, 79, 144)
-  #   headline: rgb(0, 0, 0)
-  #   section_titles: rgb(0, 0, 0)
     links: rgb(0, 79, 144)
   links:
     underline: true
     show_external_link_icon: true
-  # section_titles:
-  #   type: with_full_line
-  #   space_above: "0.55cm"
-  #   space_below: "0.3cm"
-  # entries:
-  #   side_space: "0cm"
-  #   short_second_row: false
-  #   summary:
-  #     space_above: 0.08cm
-  #   highlights:
-  #     bullet: "•"
-  #     space_left: "0cm"
-  #     space_above: 0.08cm
-  #     space_between_items: 0.08cm
-  #     space_between_bullet_and_text: 0.3em
-  # sections:
-  #   space_between_regular_entries: "0.42cm"
-  #   space_between_text_based_entries: "0.15cm"
-  #   show_time_spans_in: []
-  # templates:
-  #   education_entry:
-  #     main_column: |-
-  #       **INSTITUTION**, DEGREE in AREA -- LOCATION
-  #       SUMMARY
-  #       HIGHLIGHTS
-  #     date_and_location_column: DATE
-  #   normal_entry:
-  #     main_column: |-
-  #       **NAME** -- **LOCATION**
-  #       SUMMARY
-  #       HIGHLIGHTS
-  #     date_and_location_column: DATE
-  #   experience_entry:
-  #     main_column: |-
-  #       **POSITION**, COMPANY -- LOCATION
-  #       SUMMARY
-  #       HIGHLIGHTS
-  #     date_and_location_column: DATE
-  #   publication_entry:
-  #     main_column: |-
-  #       **TITLE**
-  #       AUTHORS
-  #       URL (JOURNAL)
-  #     date_and_location_column: DATE
 settings:
   bold_keywords:
     - "Miguel Claramunt"

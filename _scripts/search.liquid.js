@@ -107,6 +107,13 @@ ninja.data = [
           {%- assign social_id = "social-acm" -%}
           {%- assign social_title = "ACM DL" -%}
           {%- capture social_url %}"https://dl.acm.org/profile/{{ social[1] }}/"{% endcapture -%}
+<<<<<<< HEAD
+=======
+        {%- when "arxiv_id" -%}
+          {%- assign social_id = "social-arxiv" -%}
+          {%- assign social_title = "arXiv" -%}
+          {%- capture social_url %}"https://arxiv.org/a/{{ social[1] }}.html"{% endcapture -%}
+>>>>>>> upstream/main
         {%- when "blogger_url" -%}
           {%- assign social_id = "social-blogger" -%}
           {%- assign social_title = "Blogger" -%}
@@ -115,6 +122,13 @@ ninja.data = [
           {%- assign social_id = "social-bluesky" -%}
           {%- assign social_title = "Bluesky" -%}
           {%- capture social_url %}"{{ social[1] }}"{% endcapture -%}
+<<<<<<< HEAD
+=======
+        {%- when "cv_pdf" -%}
+          {%- assign social_id = "social-cv" -%}
+          {%- assign social_title = "CV" -%}
+          {%- capture social_url %}"{{ social[1] | relative_url }}"{% endcapture -%}
+>>>>>>> upstream/main
         {%- when "dblp_url" -%}
           {%- assign social_id = "social-dblp" -%}
           {%- assign social_title = "DBLP" -%}
@@ -174,7 +188,11 @@ ninja.data = [
         {%- when "lattes_id" -%}
           {%- assign social_id = "social-lattes" -%}
           {%- assign social_title = "Lattes" -%}
+<<<<<<< HEAD
           {%- capture social_url %}"http://lattes.cnpq.br/{{ social[1] }}"{% endcapture -%}
+=======
+          {%- capture social_url %}"https://lattes.cnpq.br/{{ social[1] }}"{% endcapture -%}
+>>>>>>> upstream/main
         {%- when "leetcode_id" -%}
           {%- assign social_id = "social-leetcode" -%}
           {%- assign social_title = "LeetCode" -%}

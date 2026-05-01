@@ -1,5 +1,6 @@
 // base icon class definition
 // -------------------------
+<<<<<<< HEAD
 
 .#{$fa-css-prefix} {
   font-family: var(--#{$fa-css-prefix}-style-family, '#{$fa-style-family}');
@@ -47,3 +48,32 @@
 %fa-icon {
   @include fa-icon;
 }
+=======
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.#{v.$css-prefix}-solid,
+.#{v.$css-prefix}-regular,
+.#{v.$css-prefix}-brands,
+.#{v.$css-prefix}-classic,
+.fas,
+.far,
+.fab,
+.#{v.$css-prefix} {
+  @include m.fa-icon();
+}
+
+:is(
+  .fas,
+  .far,
+  .fab,
+  .#{v.$css-prefix}-solid,
+  .#{v.$css-prefix}-regular,
+  .#{v.$css-prefix}-brands,
+  .#{v.$css-prefix}-classic,
+  .fa
+)::before {
+  content: var(#{v.$icon-property});
+  content: var(#{v.$icon-property})/"";
+}
+>>>>>>> upstream/main
