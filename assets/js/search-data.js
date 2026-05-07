@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-site-update-migrating-to-al-folio-for-a-data-driven-resume",
+        },{id: "post-5-months-of-homelabbing-lessons-learnt",
+        
+          title: "5 Months of Homelabbing: Lessons Learnt",
+        
+        description: "Reflections on repurposing a decade-old gaming PC as a server, experience earned and the practical challenges of maintaining a private cloud.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/my-homelab-journey/";
+          
+        },
+      },{id: "post-site-update-migrating-to-al-folio-for-a-data-driven-resume",
         
           title: "Site Update: Migrating to al-folio for a Data-Driven Resume",
         
@@ -84,11 +95,26 @@ ninja.data = [{
       },{id: "news-participated-in-eloquence-webcafé-detecting-and-mitigating-bias-in-ai-systems-with-javier-garcía-gilabert-we-discussed-practical-approaches-to-detect-bias-mitigation-strategies-evaluation-metrics-and-operational-considerations-for-deploying-fairer-models",
           title: 'Participated in ELOQUENCE Webcafé: “Detecting and Mitigating Bias in AI Systems” with Javier...',
           description: "",
-          section: "News",},{id: "projects-eloquence",
+          section: "News",},{id: "projects-aina",
+          title: 'Aina',
+          description: "Led by the Government of Catalonia in collaboration with the Barcelona Supercomputing Center (BSC-CNS), the Aina project is an initiative to strengthen the AI Catalan ecosystem, boost the generation of knowledge in this field and promote the creation of solutions based on this technology to improve people’s lives.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/aina/";
+            },},{id: "projects-alia",
+          title: 'ALIA',
+          description: "ALIA is an European initiative to provide a public infrastructure of AI resources to promote the advancement of Spanish and co-official languages—Catalan and Valencian, Basque, and Galician—in the development and deployment of AI worldwide.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/alia/";
+            },},{id: "projects-eloquence",
           title: 'ELOQUENCE',
           description: "ELOQUENCE is pioneering the development of advanced voice/chat bot technologies aimed at transforming unstructured dialogues into comprehensible, safe, and unbiased interactions.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/eloquence/";
+            },},{id: "projects-homelab",
+          title: 'Homelab',
+          description: "Building and maintaining a personal homelab for self-hosting services, automation, and privacy.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/homelab/";
             },},{id: "projects-vectorizing-barcelona-metro-tickets",
           title: 'Vectorizing Barcelona Metro Tickets',
           description: "From low-res image to physical bookmark: vectorizing Barcelona&#39;s forgotten transit history",
