@@ -1,99 +1,116 @@
 {% comment %}
   Unified publications entry renderer for both formats
+  Parameters:
+    - show_location: boolean (default: true)
+    - italics_authors: boolean (default: false)
 {% endcomment %}
+
+{% assign show_location = include.show_location | default: true %}
+{% assign italics_authors = include.italics_authors | default: false %}
 
 <ul class="card-text font-weight-light list-group list-group-flush">
   {% for entry in entries %}
     <li class="list-group-item">
       <div class="row">
-        {% capture pub_date %}
-          {% if entry.releaseDate %}{{ entry.releaseDate }}{% elsif entry.date %}{{ entry.date }}{% endif %}
-        {% endcapture %}
+        <div class="col-xs-2 col-sm-2 col-md-2 text-center date-column">
+          {% capture pub_date %}
+            {% if entry.releaseDate %}{{ entry.releaseDate }}{% elsif entry.date %}{{ entry.date }}{% endif %}
+          {% endcapture %}
 
-        {% if pub_date != '' %}
-          <div class="col-xs-2 col-sm-2 col-md-2 text-center">
-            <table class="table-cv">
-              <tbody>
-                <tr>
-                  <td>
-                    <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">
-                      {{- pub_date | split: '-' | slice: 0, 1 | join: '' -}}
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0">
-            {% if entry.url %}
-              <h6 class="title font-weight-bold ml-1 ml-md-4">
-                <a href="{{ entry.url }}">{{ entry.title | default: entry.name }}</a>
-              </h6>
-            {% elsif entry.title %}
-              <h6 class="title font-weight-bold ml-1 ml-md-4">{{ entry.title }}</h6>
-            {% endif %}
+          {% if pub_date != '' %}
+            {% assign date = pub_date | strip %}
+          {% else %}
+            {% assign date = '' %}
+          {% endif %}
 
-            {% capture publisher_name %}
-              {% if entry.publisher %}{{ entry.publisher }}{% elsif entry.journal %}{{ entry.journal }}{% endif %}
-            {% endcapture %}
-            {% if publisher_name != '' %}
-              <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
-                <em>{{ publisher_name }}</em>
-              </h6>
-            {% endif %}
+          <table class="table-cv">
+            <tbody>
+              <tr>
+                <td>
+                  <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">{{ date }}</span>
+                </td>
+              </tr>
+              {% if show_location %}
+                {% capture location %}
+                  {% if entry.location %}{{ entry.location }}{% endif %}
+                {% endcapture %}
+                {% if location != '' %}
+                  <tr>
+                    <td>
+                      <p class="location">
+                        <i class="fa-solid fa-location-dot iconlocation"></i>
+                        {{ location }}
+                      </p>
+                    </td>
+                  </tr>
+                {% endif %}
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+        <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0">
+          {% capture entry_url %}
+            {% if entry.url %}{{ entry.url }}{% elsif entry.doi %}https://doi.org/{{ entry.doi }}{% endif %}
+          {% endcapture %}
 
-            {% if entry.authors %}
-              <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
-                {% for author in entry.authors %}
-                  {% if forloop.last %}
-                    {{ author }}
-                  {% else %}
-                    {{ author }},
-                  {% endif %}
-                {% endfor %}
-              </h6>
-            {% endif %}
+          {% if entry_url != '' %}
+            <h6 class="title font-weight-bold ml-1 ml-md-4">
+              <a href="{{ entry_url | strip }}">{{ entry.title | default: entry.name }}</a>
+            </h6>
+          {% elsif entry.title %}
+            <h6 class="title font-weight-bold ml-1 ml-md-4">{{ entry.title }}</h6>
+          {% endif %}
 
-            {% if entry.summary %}
-              <p class="ml-1 ml-md-4">{{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
-            {% endif %}
-          </div>
-        {% else %}
-          <div class="col-xs-12 col-sm-12 col-md-12">
-            {% if entry.url %}
-              <h6 class="title font-weight-bold ml-1 ml-md-4">
-                <a href="{{ entry.url }}">{{ entry.title | default: entry.name }}</a>
-              </h6>
-            {% elsif entry.title %}
-              <h6 class="title font-weight-bold ml-1 ml-md-4">{{ entry.title }}</h6>
-            {% endif %}
+          {% capture publisher_name %}
+            {% if entry.publisher %}{{ entry.publisher }}{% elsif entry.journal %}{{ entry.journal }}{% endif %}
+          {% endcapture %}
+          {% if publisher_name != '' %}
+            <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
+              <em>{{ publisher_name }}</em>
+            </h6>
+          {% endif %}
 
-            {% capture publisher_name %}
-              {% if entry.publisher %}{{ entry.publisher }}{% elsif entry.journal %}{{ entry.journal }}{% endif %}
-            {% endcapture %}
-            {% if publisher_name != '' %}
-              <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
-                <em>{{ publisher_name }}</em>
-              </h6>
-            {% endif %}
+          {% if entry.authors %}
+            <h6 class="ml-1 ml-md-4 {% if italics_authors %}font-italic{% endif %}" style="font-size: 0.95rem">
+              {% for author in entry.authors %}
+                {% assign author_name = author | strip %}
 
-            {% if entry.authors %}
-              <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
-                {% for author in entry.authors %}
-                  {% if forloop.last %}
-                    {{ author }}
-                  {% else %}
-                    {{ author }},
-                  {% endif %}
-                {% endfor %}
-              </h6>
-            {% endif %}
+                {% assign author_is_bold = false %}
+                {% if site.data.cv.settings.bold_keywords contains author or site.data.cv.settings.bold_keywords contains author_name %}
+                  {% assign author_is_bold = true %}
+                {% endif %}
 
-            {% if entry.summary %}
-              <p class="ml-1 ml-md-4">{{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
-            {% endif %}
-          </div>
-        {% endif %}
+                {% if forloop.last %}
+                  <span style="white-space: nowrap">
+                    {% if author_is_bold -%}
+                      <strong style="font-weight: 600">{{ author_name }}</strong>
+                    {%- else -%}
+                      {{- author_name -}}
+                    {%- endif %}
+                  </span>
+                {% else %}
+                  <span style="white-space: nowrap">
+                    {% if author_is_bold -%}
+                      <strong style="font-weight: 600">{{ author_name }}</strong>
+                    {%- else -%}
+                      {{- author_name -}}
+                    {%- endif -%}
+                  </span>,
+                {% endif %}
+              {% endfor %}
+            </h6>
+          {% endif %}
+
+          {% if entry.summary %}
+            <p class="ml-1 ml-md-4">{{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+          {% endif %}
+
+          {% if entry.doi %}
+            <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
+              DOI: <a href="https://doi.org/{{ entry.doi }}" target="_blank">{{ entry.doi }}</a>
+            </h6>
+          {% endif %}
+        </div>
       </div>
     </li>
   {% endfor %}

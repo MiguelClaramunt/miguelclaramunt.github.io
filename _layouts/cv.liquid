@@ -61,7 +61,7 @@ layout: default
         {% assign cv = site.data.cv.cv %}
 
         <!-- Header/Contact Information -->
-        {% if cv.name or cv.label or cv.location or cv.email or cv.phone or cv.website %}
+        {% if cv.name or cv.label or cv.location or cv.email or cv.phone or cv.website or cv.custom_connections %}
           <div class="card mt-3 p-3">
             <h3 class="card-title font-weight-medium">Contact Information</h3>
             <table class="table table-cv table-sm table-borderless">
@@ -108,6 +108,49 @@ layout: default
                   </td>
                 </tr>
               {% endif %}
+              {% if cv.social_networks %}
+                {% for social in cv.social_networks %}
+                  <tr>
+                    <td class="p-1 pr-2 font-weight-bold">
+                      <b>
+                        {% assign network_name = social.network | downcase %}
+                        <i class="fa-brands fa-{{ network_name }}"></i>
+                        {{ social.network }}
+                      </b>
+                    </td>
+                    <td class="p-1 pl-2 font-weight-light">
+                      <a href="{% if social.url %}{{ social.url }}{% else %}https://{{ network_name }}.com/{% if network_name == 'linkedin' %}in/{% endif %}{{ social.username }}{% endif %}" target="_blank">
+                        {{ cv.name }}
+                      </a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              {% endif %}
+              {% if cv.custom_connections %}
+                {% for connection in cv.custom_connections %}
+                  <tr>
+                    <td class="p-1 pr-2 font-weight-bold">
+                      <b>
+                        {% assign icon_name = connection.fontawesome_icon %}
+                        <i
+                          class="{% if icon_name contains 'fa-' %}{{ icon_name }}{% else %}{% if icon_name contains 'linkedin' or icon_name contains 'github' %}fa-brands fa-{{ icon_name }}{% else %}fa-solid fa-{{ icon_name }}{% endif %}{% endif %}"
+                        ></i>
+                        {{ connection.placeholder }}
+                      </b>
+                    </td>
+                    <td class="p-1 pl-2 font-weight-light">
+                      <a href="{{ connection.url }}" target="_blank">
+                        {%- assign placeholder_clean = connection.placeholder | downcase -%}
+                        {%- if placeholder_clean contains 'linkedin' or placeholder_clean contains 'github' or placeholder_clean contains 'website' -%}
+                          {{- cv.name -}}
+                        {%- else -%}
+                          {{- connection.url -}}
+                        {%- endif -%}
+                      </a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              {% endif %}
             </table>
           </div>
         {% endif %}
@@ -128,40 +171,28 @@ layout: default
           </div>
         {% endif %}
 
-        <!-- RenderCV Sections - Merge Experience and Volunteer -->
-        {% comment %} First, combine Experience and Volunteer entries {% endcomment %}
+        <!-- RenderCV Sections - Experience -->
         {% assign empty_array = '' | split: ',' %}
         {% assign exp = cv.sections.Experience | default: cv.sections.experience | default: empty_array %}
-        {% assign vol = cv.sections.Volunteer
-          | default: cv.sections.volunteer
-          | default: cv.sections.volunteering_activities
-          | default: empty_array
-        %}
-        {% assign combined_experience = exp | concat: vol %}
-        {% if combined_experience.size > 0 %}
+        {% if exp.size > 0 %}
           <a class="anchor" id="experience"></a>
           <div class="card mt-3 p-3">
             <h3 class="card-title font-weight-medium">Experience</h3>
             <div>
-              {% assign entries = combined_experience %}
+              {% assign entries = exp %}
               {% include cv/experience.liquid %}
             </div>
           </div>
         {% endif %}
 
-        {% comment %} Now render all other sections except Experience and Volunteer {% endcomment %}
+        {% comment %} Now render all other sections except Experience {% endcomment %}
         {% for section_pair in cv.sections %}
           {% assign section_title = section_pair[0] %}
           {% assign section_entries = section_pair[1] %}
 
-          {% comment %} Skip Experience and Volunteer as we've already processed them combined {% endcomment %}
+          {% comment %} Skip Experience and Summary as we've already processed them {% endcomment %}
           {% assign section_title_low = section_title | downcase %}
-          {% if section_title_low == 'experience'
-            or section_title_low == 'volunteer'
-            or section_title_low == 'volunteering_activities'
-            or section_title_low == 'professional summary'
-            or section_title_low == 'summary'
-          %}
+          {% if section_title_low == 'experience' or section_title_low == 'professional summary' or section_title_low == 'summary' %}
             {% continue %}
           {% endif %}
 
@@ -175,6 +206,8 @@ layout: default
               {% assign pretty_title = 'Presentation & Talks' %}
             {% when 'honors_&_awards' %}
               {% assign pretty_title = 'Honors & Awards' %}
+            {% when 'volunteer', 'volunteering_activities' %}
+              {% assign pretty_title = 'Volunteering Activities' %}
             {% when 'skills' %}
               {% assign pretty_title = 'Skills' %}
             {% when 'certificates' %}
@@ -194,12 +227,18 @@ layout: default
               {% if section_title_low == 'education' %}
                 {% assign entries = section_entries %}
                 {% include cv/education.liquid %}
+              {% elsif section_title_low == 'experience' or section_title_low == 'volunteer' or section_title_low == 'volunteering_activities' %}
+                {% assign entries = section_entries %}
+                {% include cv/experience.liquid %}
               {% elsif section_title_low == 'awards' or section_title == 'Honors and Awards' or section_title_low == 'honors_&_awards' %}
                 {% assign entries = section_entries %}
                 {% include cv/awards.liquid %}
-              {% elsif section_title_low == 'publications' or section_title_low == 'presentation_&_talks' %}
+              {% elsif section_title_low == 'publications' %}
                 {% assign entries = section_entries %}
-                {% include cv/publications.liquid %}
+                {% include cv/publications.liquid italics_authors=true show_location=true %}
+              {% elsif section_title_low == 'presentation_&_talks' %}
+                {% assign entries = section_entries %}
+                {% include cv/publications.liquid italics_authors=false show_location=false %}
               {% elsif section_title_low == 'skills' %}
                 {% assign entries = section_entries %}
                 {% include cv/skills.liquid %}
@@ -347,7 +386,7 @@ layout: default
             <h3 class="card-title font-weight-medium">Publications</h3>
             <div>
               {% assign entries = site.data.resume.publications %}
-              {% include cv/publications.liquid %}
+              {% include cv/publications.liquid italics_authors=true show_location=true %}
             </div>
           </div>
         {% endif %}

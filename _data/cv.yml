@@ -1,14 +1,18 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
 cv:
-  name: Miguel Claramunt
+  name: Miguel Claramunt
   location: Barcelona, ES
   email: miguel@claramunt.es
-  website: https://claramunt.es
-  social_networks:
-    - network: LinkedIn
-      username: miguelclaramunt
-    - network: GitHub
-      username: MiguelClaramunt
+  custom_connections:
+    - fontawesome_icon: globe
+      placeholder: Website
+      url: https://claramunt.es
+    - fontawesome_icon: linkedin
+      placeholder: LinkedIn
+      url: https://www.linkedin.com/in/miguelclaramunt
+    - fontawesome_icon: github
+      placeholder: GitHub
+      url: https://github.com/MiguelClaramunt
   sections:
     Professional Summary:
       - Data Scientist with a strong foundation in AI data science, and analytics, combining academic and industry experience to deliver scalable solutions. Specialized in Natural Language Processing, Large Language Models, and High-Performance Computing.
@@ -18,19 +22,19 @@ cv:
         start_date: 2024-11
         end_date: present
         location: Barcelona, ES
-        summary: Engineering state-of-the-art machine translation systems and multilingual NLP pipelines by optimizing large-scale computational linguistics solutions.
+        summary: "Engineering state-of-the-art machine translation systems and multilingual NLP pipelines. Current projects involved: ELOQUENCE (EU), AINA (CA), ALIA (ES)."
       - company: Leeos Merch
         position: Support Infrastructure Engineer
         start_date: 2024-07
         end_date: 2024-09
         location: Barcelona, ES
-        summary: Architected a scalable Freshdesk infrastructure for high-volume platforms, automating workflows to manage 5.5K+ monthly tickets with >90% SLA compliance.
+        summary: Architected a scalable Freshdesk infrastructure for high-volume platforms, automating workflows to manage 5.5K+ monthly tickets.
       - company: SDG Group
-        position: "Data Engineer & Analyst (Client: CaixaBank)"
+        position: "Data Engineer (Client: CaixaBank)"
         start_date: 2023-09
         end_date: 2024-04
         location: Barcelona, ES
-        summary: Engineered enterprise ETL pipelines processing 500K+ records monthly and maintained a real-time analytics platform for 40K+ daily users.
+        summary: Maintained a real-time analytics platform for 40K+ daily users and engineered enterprise ETL pipelines processing 500K+ records monthly.
       - company: Universitat de València
         position: Undergraduate Research Assistant
         start_date: 2022-04
@@ -40,20 +44,22 @@ cv:
     education:
       - institution: Universitat Pompeu Fabra
         area: Intelligent Interactive Systems
-        degree: MSc
+        degree: Master of Science
         start_date: 2024
         end_date: 2026
         location: Barcelona, ES
       - institution: Universitat de València
         area: Data Science
-        degree: BSc
+        degree: Bachelor of Science
         start_date: 2019
         end_date: 2023
         location: València, ES
     honors_&_awards:
-      - name: "[City of Valencia Data Visualization Award](https://ludificacion.uv.es/index.php/2021/07/19/los-ganadores-de-los-concursos-de-la-catedra-de-ludificacio-i-govern-obert-a-la-ciutat-de-valencia-reciben-sus-premios/)"
+      - name: City of Valencia Data Visualization Award
+        url: https://ludificacion.uv.es/index.php/2021/07/19/los-ganadores-de-los-concursos-de-la-catedra-de-ludificacio-i-govern-obert-a-la-ciutat-de-valencia-reciben-sus-premios/
         summary: "Awarded by the Chair of Gamification and Open Government of València (Càtedra de Ludificació i Govern Obert a la Ciutat de València)"
         date: 2021-07
+        location: València, ES
     skills:
       - label: Languages
         details: "Spanish (native proficiency), English (full professional proficiency), Catalan (professional proficiency)"
@@ -67,31 +73,31 @@ cv:
     publications:
       - title: "From SALAMANDRA to SALAMANDRATA: BSC Submission for WMT25 General Machine Translation Shared Task"
         authors:
-          - Javier García Gilabert
-          - Xixian Liao
-          - Severino Da Dalt
-          - Ella Bohman
-          - Audrey Mash
-          - Francesca De Luca Fornaciari
-          - Irene Baucells
-          - Joan Llop
-          - Miguel Claramunt
-          - Carlos Escolano
-          - Maite Melero
+          - Javier García-Gilabert
+          - Xixian Liao
+          - Severino Da-Dalt
+          - Ella Bohman
+          - Audrey Mash
+          - Francesca De-Luca-Fornaciari
+          - Irene Baucells
+          - Joan Llop
+          - Miguel Claramunt
+          - Carlos Escolano
+          - Maite Melero
         doi: 10.18653/v1/2025.wmt-1.37
         journal: "Proceedings of the Tenth Conference on Machine Translation"
         location: "Suzhou, China"
         date: 2025-08
       - title: "Culture-aware machine translation: the case study of low-resource language pair Catalan-Chinese"
         authors:
-          - Xixian Liao
-          - Carlos Escolano
-          - Audrey Mash
-          - Francesca De Luca Fornaciari
-          - Javier García Gilabert
-          - Miguel Claramunt
-          - Ella Bohman
-          - Maite Melero
+          - Xixian Liao
+          - Carlos Escolano
+          - Audrey Mash
+          - Francesca De-Luca-Fornaciari
+          - Javier García-Gilabert
+          - Miguel Claramunt
+          - Ella Bohman
+          - Maite Melero
         url: https://aclanthology.org/2025.mtsummit-1.12/
         journal: "Proceedings of Machine Translation Summit XX"
         location: "Geneva, Switzerland"
@@ -100,10 +106,11 @@ cv:
       - title: "Detecting and Mitigating Bias in AI Systems: Webcafé"
         url: https://youtube.com/watch?v=AHfP29vU6k4
         authors:
-          - Javi García Gilabert
-          - Miguel Claramunt
-        journal: ELOQUENCE AI
+          - Javier García-Gilabert
+          - Miguel Claramunt
+        journal: ELOQUENCE AI
         date: 2025-08
+        location: "Online"
 
 design:
   theme: engineeringresumes
@@ -114,6 +121,8 @@ design:
       show_icons: true
       display_urls_instead_of_usernames: false
   typography:
+    font_size:
+      name: 25pt
     alignment: justified-with-no-hyphenation
   colors:
     connections: rgb(0, 79, 144)
@@ -123,8 +132,10 @@ design:
     show_external_link_icon: true
 settings:
   bold_keywords:
-    - "Miguel Claramunt"
+    - "Miguel Claramunt"
   render_command:
+    pdf_path: ../assets/pdf/cv.pdf
     dont_generate_html: true
     dont_generate_markdown: true
     dont_generate_png: true
+    dont_generate_typst: false
