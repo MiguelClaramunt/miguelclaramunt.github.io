@@ -4,7 +4,7 @@ layout: page
 title: Vectorizing Barcelona Metro Tickets
 description: "From low-res image to physical bookmark: vectorizing Barcelona's forgotten transit history"
 img: assets/img/projects/tmb_0.webp
-importance: 1
+importance: 2
 category: personal
 images:
   spotlight: true
