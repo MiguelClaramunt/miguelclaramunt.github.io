@@ -7,7 +7,7 @@ RENDERCV_OUTPUT_DIR := _data/rendercv_output
 .PHONY: render up
 render: ## Build the PDF CV via rendercv and clean temporary artifacts.
 	@mkdir -p "$(abspath $(dir $(CV_OUTPUT)))"
-	$(UV) tool run --python 3.13 --from "rendercv[full]>=2.8" rendercv render "$(CV_INPUT)" -pdf "../$(CV_OUTPUT)"
+	$(UV) tool run --from "rendercv[full]" rendercv render "$(CV_INPUT)" -pdf "../$(CV_OUTPUT)"
 	rm -rf "$(abspath $(RENDERCV_OUTPUT_DIR))"
 
 up: ## Start the website locally via docker compose.
