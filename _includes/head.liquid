@@ -1,6 +1,15 @@
 <!-- Metadata, OpenGraph and Schema.org -->
 {% include metadata.liquid %}
 
+<!-- Preload a representative Habbo avatar to improve LCP for the footer
+  where the avatar image is used. This preloads a default figure (base
+  parts) so the browser can start fetching/decoding early. If you prefer
+  a server-computed specific avatar, add a server-side <link rel="preload"> in
+  your layout instead. -->
+<link rel="dns-prefetch" href="https://www.habbo.com">
+<link rel="preconnect" href="https://www.habbo.com" crossorigin>
+<link rel="preload" as="image" href="https://www.habbo.com/habbo-imaging/avatarimage?figure=hr-3322-37-61.hd-185-1-61.lg-270-82-61.ea-3727-1327-1327&gender=M&direction=2&head_direction=2&size=l">
+
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url | bust_file_cache }}">
 <link

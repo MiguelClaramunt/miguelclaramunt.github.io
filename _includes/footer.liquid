@@ -58,7 +58,13 @@
             Last updated on {{ 'now' | date: '%B %Y' }}.
           </p>
         </div>
+        <div class="footer-right" style="flex:0 0 auto; display:flex; align-items:center; justify-content:flex-end; min-width:128px;">
+          <!-- Avatar footer container (single avatar rendered by assets/js/avatar-gen.js) -->
+          <div id="avatar-footer" aria-hidden="true"></div>
+        </div>
       </div>
     </div>
+    <!-- Load avatar JS (renders footer avatar and provides demo generator support when #avatars exists) -->
+    <script src="{{ '/assets/js/avatar-gen.js' | relative_url }}"></script>
   </footer>
 {% endif %}

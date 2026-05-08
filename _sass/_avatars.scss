@@ -1,0 +1,55 @@
+// Avatar styles (pixel-art, fixed-size images and footer placement)
+.avatar-card {
+  width: 240px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.avatar-img {
+  display: block;
+  margin: 0 auto 6px;
+  width: 128px;
+  height: 220px;
+  min-width: 128px;
+  min-height: 220px;
+  max-width: 128px;
+  max-height: 220px;
+  object-fit: none; /* don't preserve aspect ratio—force exact pixel dimensions */
+  /* Pixel-art rendering (nearest neighbour) for multiple engines */
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE */
+  background: transparent;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.avatar-url {
+  font-size: 11px;
+  word-break: break-all;
+}
+
+.btn-copy {
+  margin-top: 6px;
+}
+
+/* Footer avatar container: place inline inside footer-right and align to the right.
+   The footer layout already controls positioning; avoid fixed positioning so the
+   avatar stays inside the footer box. */
+#avatar-footer {
+  display: inline-block;
+  vertical-align: middle;
+  /* limit width so it doesn't overflow the footer column */
+  max-width: 128px;
+  pointer-events: auto;
+}
+
+/* Make sure the avatar in the footer uses the same avatar-img styling but
+   remove the auto-centering margin so it aligns to the right in the footer. */
+#avatar-footer .avatar-img {
+  display: block;
+  margin: 0;
+}
