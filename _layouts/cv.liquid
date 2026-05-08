@@ -119,7 +119,10 @@ layout: default
                       </b>
                     </td>
                     <td class="p-1 pl-2 font-weight-light">
-                      <a href="{% if social.url %}{{ social.url }}{% else %}https://{{ network_name }}.com/{% if network_name == 'linkedin' %}in/{% endif %}{{ social.username }}{% endif %}" target="_blank">
+                      <a
+                        href="{% if social.url %}{{ social.url }}{% else %}https://{{ network_name }}.com/{% if network_name == 'linkedin' %}in/{% endif %}{{ social.username }}{% endif %}"
+                        target="_blank"
+                      >
                         {{ cv.name }}
                       </a>
                     </td>
@@ -141,7 +144,10 @@ layout: default
                     <td class="p-1 pl-2 font-weight-light">
                       <a href="{{ connection.url }}" target="_blank">
                         {%- assign placeholder_clean = connection.placeholder | downcase -%}
-                        {%- if placeholder_clean contains 'linkedin' or placeholder_clean contains 'github' or placeholder_clean contains 'website' -%}
+                        {%- if placeholder_clean contains 'linkedin'
+                          or placeholder_clean contains 'github'
+                          or placeholder_clean contains 'website'
+                        -%}
                           {{- cv.name -}}
                         {%- else -%}
                           {{- connection.url -}}
