@@ -12,3 +12,7 @@ render: ## Build the PDF CV via rendercv and clean temporary artifacts.
 
 up: ## Start the website locally via docker compose.
 	$(DOCKER_COMPOSE) up
+
+setup-hooks: ## Install pre-commit git hooks via uv.
+	$(UV) tool install pre-commit --force
+	$(UV) tool run pre-commit install
