@@ -1,0 +1,39 @@
+{% comment %}
+  Unified skills entry renderer for both formats
+{% endcomment %}
+
+<div class="card-text font-weight-light">
+  {% for entry in entries %}
+    <div class="skill-item">
+      {% if entry.icon %}
+        <i class="{{ entry.icon }}"></i>
+      {% endif %}
+      <strong>
+        {{- entry.name | default: entry.label -}}
+        {%- if entry.level %} ({{ entry.level }}){% endif %}:</strong
+      >
+      {% if entry.keywords or entry.details %}
+        {% assign skill_items = entry.keywords | default: entry.details %}
+        {% if skill_items.size > 0 %}
+          {% if skill_items.first %}
+            {% for keyword in skill_items %}
+              {% if forloop.last %}
+                {{ keyword }}
+              {% else %}
+                {{ keyword }},
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            {{ skill_items }}
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  .skill-item {
+    padding: 0.5rem 0;
+  }
+</style>

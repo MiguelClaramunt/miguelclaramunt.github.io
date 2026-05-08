@@ -31,7 +31,7 @@ Hello! I am Miguel Claramunt
       data-audio-src="{{ '/assets/audio/pronunciation_miguel_claramunt.wav' | relative_url }}"
       aria-label="IPA pronunciation: /miˈɣel klaɾaˈmunt/. Click to hear pronunciation" title="Click to hear pronunciation">
 <span id="ipa-notation" class="ipa-notation">/miˈɣel klaɾaˈmunt/</span>
-<i class="fas fa-volume-up pronunciation-speaker" aria-hidden="true"></i>
+<i class="fa-solid fa-volume-high pronunciation-speaker" aria-hidden="true"></i>
 </span>
 (he/him).
 

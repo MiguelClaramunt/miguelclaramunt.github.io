@@ -1,0 +1,49 @@
+{% comment %}
+  Unified certificates entry renderer for both formats
+{% endcomment %}
+
+<ul class="card-text font-weight-light list-group list-group-flush">
+  {% for entry in entries %}
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 text-center date-column">
+          {% capture date %}
+            {% if entry.date %}{{ entry.date }}{% endif %}
+          {% endcapture %}
+
+          {% if date != '' %}
+            <table class="table-cv">
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">
+                      {{- date | strip -}}
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+        <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0">
+          {% if entry.icon %}
+            <i class="{{ entry.icon }}"></i>
+          {% endif %}
+          {% if entry.url %}
+            <h6 class="title font-weight-bold ml-1 ml-md-4">
+              <a href="{{ entry.url }}" target="_blank">{{ entry.name }}</a>
+            </h6>
+          {% elsif entry.name %}
+            <h6 class="title font-weight-bold ml-1 ml-md-4">{{ entry.name }}</h6>
+          {% endif %}
+
+          {% if entry.issuer %}
+            <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
+              <em>{{ entry.issuer }}</em>
+            </h6>
+          {% endif %}
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+</ul>

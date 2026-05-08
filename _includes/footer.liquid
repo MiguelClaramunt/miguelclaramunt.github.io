@@ -26,6 +26,10 @@
 {% assign display_sticky_footer = site.footer_sticky %}
 {% if display_sticky_footer %}
   <footer class="sticky-bottom mt-5" role="contentinfo">
+    {% if site.newsletter.enabled %}
+      {% include newsletter.liquid %}
+    {% endif %}
+
     <div class="container" style="max-width:960px; margin:0 auto;">
       <div class="footer-flex" style="display:flex; flex-wrap:wrap; gap:2rem; text-align:left;">
         <div class="footer-left" style="flex:1; min-width:280px;">
@@ -55,6 +59,9 @@
               {{ footer_text_html -}}
               <br>
             {% endif %}
+            {% if site.impressum_path %}
+              <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.<br>
+            {% endif %}
             Last updated on {{ 'now' | date: '%B %Y' }}.
           </p>
         </div>
@@ -67,4 +74,35 @@
     <!-- Load avatar JS (renders footer avatar and provides demo generator support when #avatars exists) -->
     <script src="{{ '/assets/js/avatar-gen.js' | relative_url }}"></script>
   </footer>
+{% else %}
+  {% capture footer_contents %}
+    &copy; Copyright {{ site.time | date: '%Y' }}
+    {{ site.first_name }}
+    {{ site.middle_name }}
+    {{ site.last_name }}. {{ site.footer_text }}
+    {% if site.impressum_path %}
+      <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
+    {% endif %}
+    {% if site.last_updated %}
+      Last updated: {{ 'now' | date: '%B %d, %Y' }}.
+    {% endif %}
+  {% endcapture %}
+
+  {% if site.footer_fixed %}
+    <footer class="fixed-bottom" role="contentinfo">
+      <div class="container mt-0">
+        {{ footer_contents }}
+      </div>
+    </footer>
+  {% else %}
+    <footer class="sticky-bottom mt-5" role="contentinfo">
+      {% if site.newsletter.enabled %}
+        {% include newsletter.liquid %}
+      {% endif %}
+
+      <div class="container">
+        {{ footer_contents }}
+      </div>
+    </footer>
+  {% endif %}
 {% endif %}

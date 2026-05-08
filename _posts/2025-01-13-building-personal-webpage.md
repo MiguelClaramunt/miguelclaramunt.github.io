@@ -11,9 +11,9 @@ toc:
 
 > **👋 (12/11/2025) Heads-Up: This Post contains some parts that are obsolete**
 >
-> This article is still a decent introduction to the *general* concepts of GitHub Pages and Jekyll, but my personal site has moved on:
+> This article is still a decent introduction to the _general_ concepts of GitHub Pages and Jekyll, but my personal site has moved on:
 >
-> * **Theme:** I no longer use or recommend **Minimal Mistakes**. I found it limiting as I wanted to expand. My site now runs on **al-folio**, which I chose for its superior features.
+> - **Theme:** I no longer use or recommend **Minimal Mistakes**. I found it limiting as I wanted to expand. My site now runs on **al-folio**, which I chose for its superior features.
 >
 > For the most current story and setup, please read the follow-up post:
 >

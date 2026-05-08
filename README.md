@@ -182,7 +182,7 @@ Feel free to add your own page(s) by sending a PR.
 <a href="https://inbt.jhu.edu/epidiagnostics/" target="_blank">★</a>
 <a href="https://www.nuesl.org/" target="_blank">★</a>
 <a href="https://big-culture.github.io/" target="_blank">★</a>
-<a href="https://martinbulla.github.io/bullab/" target="_blank">★</a>  
+<a href="https://martinbulla.github.io/bullab/" target="_blank">★</a>
 <a href="https://gpforesteyes.github.io/" target="_blank">★</a>
 </td>
 </tr>
@@ -298,9 +298,7 @@ There are currently 2 different ways of generating the CV page content. The firs
 
 What this means is, if there is no resume data defined in [\_config.yml](_config.yml) and loaded via a json file, it will load the contents of [\_data/cv.yml](_data/cv.yml) as fallback.
 
-[![CV Preview](readme_preview/cv.png)](https://alshedivat.github.io/al-folio/cv/)
-
----
+## [![CV Preview](readme_preview/cv.png)](https://alshedivat.github.io/al-folio/cv/)
 
 ### People
 
@@ -316,9 +314,7 @@ Your publications' page is generated automatically from your BibTex bibliography
 
 You can add extra information to a publication, like a PDF file in the [assets/pdf/](assets/pdf/) directory and add the path to the PDF file in the BibTeX entry with the `pdf` field. Some of the supported fields are: `abstract`, `altmetric`, `arxiv`, `bibtex_show`, `blog`, `code`, `dimensions`, `doi`, `eprint`, `html`, `isbn`, `pdf`, `pmid`, `poster`, `slides`, `supp`, `video`, and `website`.
 
-[![Publications Preview](readme_preview/publications.png)](https://alshedivat.github.io/al-folio/publications/)
-
----
+## [![Publications Preview](readme_preview/publications.png)](https://alshedivat.github.io/al-folio/publications/)
 
 ### Collections
 

@@ -4,7 +4,7 @@
     "label": "Data Scientist",
     "email": "miguel@claramunt.es",
     "url": "https://claramunt.es",
-    "summary": "Data Scientist with a strong foundation in AI, data science, and analytics, combining academic and industry experience to deliver scalable, data-driven solutions. Skilled in machine translation, deep learning, and large-scale data systems, with a track record of optimizing workflows, reducing costs, and enhancing decision-making for organizations.",
+    "summary": "Data Scientist with a strong foundation in AI data science, and analytics, combining academic and industry experience to deliver scalable solutions. Specialized in Natural Language Processing, Large Language Models, and High-Performance Computing.",
     "location": {
       "city": "Barcelona",
       "countryCode": "ES"
@@ -102,7 +102,7 @@
       "name": "From SALAMANDRA to SALAMANDRATA: BSC Submission for WMT25 General Machine Translation Shared Task",
       "publisher": "Proceedings of the Tenth Conference on Machine Translation",
       "releaseDate": "2025-08",
-      "url": "https://arxiv.org/abs/2508.12774",
+      "url": "https://aclanthology.org/2025.wmt-1.37/",
       "authors": [
         "Javier García Gilabert",
         "Xixian Liao",
@@ -116,7 +116,7 @@
         "Carlos Escolano",
         "Maite Melero"
       ],
-      "summary": "J. García-Gilabert, X. Liao, S. Da-Dalt, E. Bohman, A. Mash, F. De-Luca-Fornaciari, I. Baucells, J. Llop, M. Claramunt, C. Escolano, M. Melero (2025). Proceedings of the Tenth Conference on Machine Translation."
+      "summary": "J. García-Gilabert, X. Liao, S. Da-Dalt, E. Bohman, A. Mash, F. De-Luca-Fornaciari, I. Baucells, J. Llop, M. Claramunt, C. Escolano, M. Melero (2025). Proceedings of the Tenth Conference on Machine Translation, 614–637."
     },
     {
       "name": "Culture-aware machine translation: the case study of low-resource language pair Catalan-Chinese",
